@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-primary-500: 238, 195, 79; /* warm golden-yellow */
+  --c-secondary-500: 34, 197, 94; /* bright green */
+  --c-neutral-100: 243, 244, 246; /* light background */
+  --c-neutral-900: 17, 24, 39; /* dark text */
+  --c-neutral-800: 31, 41, 55;
+  --c-neutral-700: 55, 65, 81;
+  --c-neutral-600: 75, 85, 99;
+  --c-neutral-500: 107, 114, 128;
+  --c-neutral-400: 156, 163, 175;
+  --c-neutral-300: 209, 213, 219;
+  --c-neutral-200: 229, 231, 235;
+  --c-warning-500: 245, 158, 11;
+  --c-error-500: 239, 68, 68;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(var(--c-neutral-100));
+  color: rgb(var(--c-neutral-900));
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, rgb(var(--c-primary-500)), rgb(var(--c-secondary-500)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  @apply bg-[rgb(var(--c-primary-500))] text-[rgb(var(--c-neutral-900))] px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-[rgb(var(--c-secondary-500))] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-lg border border-[rgb(var(--c-neutral-200))] transition-all duration-200 hover:shadow-xl;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 border border-[rgb(var(--c-neutral-300))] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent transition-all duration-200;
+}
+
+.section-padding {
+  @apply px-4 sm:px-6 lg:px-8 py-12 lg:py-16;
+}
+
+.container-max {
+  @apply max-w-7xl mx-auto;
+}
