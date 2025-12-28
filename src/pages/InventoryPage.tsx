@@ -1,16 +1,18 @@
 import React from 'react';
+import InventoryTable from '../components/inventory/InventoryTable';
 
 const InventoryPage: React.FC = () => {
   return (
     <div>
-      <h2 className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] mb-4">
-        Inventory Management
-      </h2>
-      <div className="bg-white rounded-lg border border-[rgb(var(--c-neutral-200))] p-6">
-        <p className="text-[rgb(var(--c-neutral-600))]">
-          Track and manage your inventory levels here. This is a placeholder page.
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] mb-2">
+          Inventory Management
+        </h2>
+        <p className="text-sm text-[rgb(var(--c-neutral-600))]">
+          Manage stock levels across all your products and variants. Click on stock values to edit them inline.
         </p>
       </div>
+      <InventoryTable />
     </div>
   );
 };
