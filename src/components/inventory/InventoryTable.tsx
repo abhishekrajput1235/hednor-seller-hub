@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Check, X, AlertTriangle, PackageOpen } from 'lucide-react';
-import { mockInventoryData } from './mockInventoryData';
+import { mockInventoryData, getStockStatus } from './mockInventoryData';
 import InventoryStatusBadge from './InventoryStatusBadge';
 
 interface EditingCell {
@@ -77,7 +77,7 @@ const InventoryTable: React.FC = () => {
                 };
                 // Update status based on available stock
                 if (editingCell.field === 'availableStock') {
-                  updated.status = newValue === 0 ? 'Out of stock' : newValue <= 10 ? 'Low stock' : 'In stock';
+                  updated.status = getStockStatus(newValue);
                 }
                 return updated;
               }

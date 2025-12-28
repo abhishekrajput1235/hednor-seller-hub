@@ -14,7 +14,7 @@ export interface InventoryProduct {
   variants: InventoryVariant[];
 }
 
-const getStockStatus = (available: number): 'In stock' | 'Low stock' | 'Out of stock' => {
+export const getStockStatus = (available: number): 'In stock' | 'Low stock' | 'Out of stock' => {
   if (available === 0) return 'Out of stock';
   if (available <= 10) return 'Low stock';
   return 'In stock';
