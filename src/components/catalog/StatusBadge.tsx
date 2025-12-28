@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface StatusBadgeProps {
-  status: 'Active' | 'Inactive' | 'Draft';
+  status: 'Active' | 'Inactive' | 'Draft' | 'Blocked';
 }
 
 const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
@@ -13,6 +13,8 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
         return 'bg-red-100 text-red-800 border-red-200';
       case 'Draft':
         return 'bg-gray-100 text-gray-800 border-gray-200';
+      case 'Blocked':
+        return 'bg-orange-100 text-orange-800 border-orange-200';
       default:
         return 'bg-gray-100 text-gray-800 border-gray-200';
     }

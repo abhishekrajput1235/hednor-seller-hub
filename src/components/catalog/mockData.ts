@@ -1,7 +1,12 @@
 // Mock data for catalog products
 export interface ProductVariant {
   sku: string;
+  size?: string;
+  color?: string;
+  price: number;
   stock: number;
+  reservedStock: number;
+  status: 'Active' | 'Inactive';
 }
 
 export interface Product {
@@ -14,7 +19,8 @@ export interface Product {
   priceMin: number;
   priceMax?: number;
   totalStock: number;
-  status: 'Active' | 'Inactive' | 'Draft';
+  reservedStock: number;
+  status: 'Active' | 'Inactive' | 'Draft' | 'Blocked';
   visibility: 'Published' | 'Unpublished';
   lastUpdated: string;
 }
@@ -27,13 +33,14 @@ export const mockProducts: Product[] = [
     category: 'Electronics',
     skuCount: 3,
     variants: [
-      { sku: 'WH-BLK-001', stock: 45 },
-      { sku: 'WH-WHT-001', stock: 32 },
-      { sku: 'WH-BLU-001', stock: 28 }
+      { sku: 'WH-BLK-001', color: 'Black', price: 129.99, stock: 45, reservedStock: 5, status: 'Active' },
+      { sku: 'WH-WHT-001', color: 'White', price: 139.99, stock: 32, reservedStock: 8, status: 'Active' },
+      { sku: 'WH-BLU-001', color: 'Blue', price: 149.99, stock: 28, reservedStock: 3, status: 'Active' }
     ],
     priceMin: 129.99,
     priceMax: 149.99,
     totalStock: 105,
+    reservedStock: 16,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-15T10:30:00Z'
@@ -45,15 +52,16 @@ export const mockProducts: Product[] = [
     category: 'Clothing',
     skuCount: 5,
     variants: [
-      { sku: 'TS-BLK-S', stock: 12 },
-      { sku: 'TS-BLK-M', stock: 8 },
-      { sku: 'TS-BLK-L', stock: 15 },
-      { sku: 'TS-WHT-M', stock: 20 },
-      { sku: 'TS-WHT-L', stock: 10 }
+      { sku: 'TS-BLK-S', size: 'S', color: 'Black', price: 24.99, stock: 12, reservedStock: 2, status: 'Active' },
+      { sku: 'TS-BLK-M', size: 'M', color: 'Black', price: 24.99, stock: 8, reservedStock: 1, status: 'Active' },
+      { sku: 'TS-BLK-L', size: 'L', color: 'Black', price: 24.99, stock: 15, reservedStock: 3, status: 'Active' },
+      { sku: 'TS-WHT-M', size: 'M', color: 'White', price: 29.99, stock: 20, reservedStock: 5, status: 'Active' },
+      { sku: 'TS-WHT-L', size: 'L', color: 'White', price: 29.99, stock: 10, reservedStock: 2, status: 'Active' }
     ],
     priceMin: 24.99,
     priceMax: 29.99,
     totalStock: 65,
+    reservedStock: 13,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-14T15:45:00Z'
@@ -66,6 +74,7 @@ export const mockProducts: Product[] = [
     skuCount: 1,
     priceMin: 19.99,
     totalStock: 0,
+    reservedStock: 0,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-13T09:20:00Z'
@@ -77,12 +86,13 @@ export const mockProducts: Product[] = [
     category: 'Electronics',
     skuCount: 2,
     variants: [
-      { sku: 'CAM-KIT-001', stock: 8 },
-      { sku: 'CAM-KIT-002', stock: 5 }
+      { sku: 'CAM-KIT-001', color: 'Black', price: 599.99, stock: 8, reservedStock: 2, status: 'Active' },
+      { sku: 'CAM-KIT-002', color: 'Silver', price: 649.99, stock: 5, reservedStock: 1, status: 'Active' }
     ],
     priceMin: 599.99,
     priceMax: 649.99,
     totalStock: 13,
+    reservedStock: 3,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-16T11:00:00Z'
@@ -94,14 +104,15 @@ export const mockProducts: Product[] = [
     category: 'Sports & Fitness',
     skuCount: 4,
     variants: [
-      { sku: 'YM-PNK-01', stock: 25 },
-      { sku: 'YM-BLU-01', stock: 30 },
-      { sku: 'YM-GRN-01', stock: 22 },
-      { sku: 'YM-PRP-01', stock: 18 }
+      { sku: 'YM-PNK-01', color: 'Pink', price: 34.99, stock: 25, reservedStock: 4, status: 'Active' },
+      { sku: 'YM-BLU-01', color: 'Blue', price: 34.99, stock: 30, reservedStock: 6, status: 'Active' },
+      { sku: 'YM-GRN-01', color: 'Green', price: 39.99, stock: 22, reservedStock: 3, status: 'Active' },
+      { sku: 'YM-PRP-01', color: 'Purple', price: 39.99, stock: 18, reservedStock: 2, status: 'Active' }
     ],
     priceMin: 34.99,
     priceMax: 39.99,
     totalStock: 95,
+    reservedStock: 15,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-12T14:30:00Z'
@@ -113,12 +124,13 @@ export const mockProducts: Product[] = [
     category: 'Bags & Accessories',
     skuCount: 2,
     variants: [
-      { sku: 'BP-BRN-01', stock: 3 },
-      { sku: 'BP-BLK-01', stock: 5 }
+      { sku: 'BP-BRN-01', color: 'Brown', price: 79.99, stock: 3, reservedStock: 1, status: 'Active' },
+      { sku: 'BP-BLK-01', color: 'Black', price: 89.99, stock: 5, reservedStock: 2, status: 'Active' }
     ],
     priceMin: 79.99,
     priceMax: 89.99,
     totalStock: 8,
+    reservedStock: 3,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-11T16:15:00Z'
@@ -131,6 +143,7 @@ export const mockProducts: Product[] = [
     skuCount: 1,
     priceMin: 89.99,
     totalStock: 42,
+    reservedStock: 6,
     status: 'Inactive',
     visibility: 'Unpublished',
     lastUpdated: '2024-01-10T08:45:00Z'
@@ -143,6 +156,7 @@ export const mockProducts: Product[] = [
     skuCount: 1,
     priceMin: 149.99,
     totalStock: 18,
+    reservedStock: 4,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-09T13:20:00Z'
@@ -155,6 +169,7 @@ export const mockProducts: Product[] = [
     skuCount: 1,
     priceMin: 49.99,
     totalStock: 67,
+    reservedStock: 12,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-17T10:00:00Z'
@@ -166,13 +181,14 @@ export const mockProducts: Product[] = [
     category: 'Electronics',
     skuCount: 3,
     variants: [
-      { sku: 'SPK-BLK-01', stock: 0 },
-      { sku: 'SPK-BLU-01', stock: 0 },
-      { sku: 'SPK-RED-01', stock: 0 }
+      { sku: 'SPK-BLK-01', color: 'Black', price: 39.99, stock: 0, reservedStock: 0, status: 'Inactive' },
+      { sku: 'SPK-BLU-01', color: 'Blue', price: 44.99, stock: 0, reservedStock: 0, status: 'Inactive' },
+      { sku: 'SPK-RED-01', color: 'Red', price: 44.99, stock: 0, reservedStock: 0, status: 'Inactive' }
     ],
     priceMin: 39.99,
     priceMax: 44.99,
     totalStock: 0,
+    reservedStock: 0,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-08T12:30:00Z'
@@ -184,12 +200,13 @@ export const mockProducts: Product[] = [
     category: 'Furniture',
     skuCount: 2,
     variants: [
-      { sku: 'CHR-BLK-01', stock: 12 },
-      { sku: 'CHR-GRY-01', stock: 9 }
+      { sku: 'CHR-BLK-01', color: 'Black', price: 199.99, stock: 12, reservedStock: 3, status: 'Active' },
+      { sku: 'CHR-GRY-01', color: 'Gray', price: 229.99, stock: 9, reservedStock: 2, status: 'Active' }
     ],
     priceMin: 199.99,
     priceMax: 229.99,
     totalStock: 21,
+    reservedStock: 5,
     status: 'Active',
     visibility: 'Published',
     lastUpdated: '2024-01-07T09:15:00Z'
@@ -202,9 +219,62 @@ export const mockProducts: Product[] = [
     skuCount: 1,
     priceMin: 29.99,
     totalStock: 54,
+    reservedStock: 8,
     status: 'Draft',
     visibility: 'Unpublished',
     lastUpdated: '2024-01-18T14:00:00Z'
+  },
+  {
+    id: 'PRD-013',
+    title: 'Wireless Gaming Keyboard - Mechanical RGB',
+    thumbnail: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=100&h=100&fit=crop',
+    category: 'Electronics',
+    skuCount: 3,
+    variants: [
+      { sku: 'KB-BLK-MX', color: 'Black', size: 'Full Size', price: 119.99, stock: 2, reservedStock: 1, status: 'Active' },
+      { sku: 'KB-WHT-MX', color: 'White', size: 'Full Size', price: 129.99, stock: 4, reservedStock: 0, status: 'Active' },
+      { sku: 'KB-BLK-TKL', color: 'Black', size: 'TKL', price: 109.99, stock: 6, reservedStock: 2, status: 'Active' }
+    ],
+    priceMin: 109.99,
+    priceMax: 129.99,
+    totalStock: 12,
+    reservedStock: 3,
+    status: 'Active',
+    visibility: 'Published',
+    lastUpdated: '2024-01-19T16:45:00Z'
+  },
+  {
+    id: 'PRD-014',
+    title: 'Premium Sunglasses - UV Protection',
+    thumbnail: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=100&h=100&fit=crop',
+    category: 'Bags & Accessories',
+    skuCount: 4,
+    variants: [
+      { sku: 'SG-BLK-POL', color: 'Black', size: 'Polarized', price: 89.99, stock: 5, reservedStock: 1, status: 'Active' },
+      { sku: 'SG-BRN-POL', color: 'Brown', size: 'Polarized', price: 89.99, stock: 3, reservedStock: 0, status: 'Active' },
+      { sku: 'SG-BLK-MIR', color: 'Black', size: 'Mirrored', price: 99.99, stock: 7, reservedStock: 2, status: 'Active' },
+      { sku: 'SG-BLU-MIR', color: 'Blue', size: 'Mirrored', price: 99.99, stock: 4, reservedStock: 1, status: 'Active' }
+    ],
+    priceMin: 89.99,
+    priceMax: 99.99,
+    totalStock: 19,
+    reservedStock: 4,
+    status: 'Active',
+    visibility: 'Published',
+    lastUpdated: '2024-01-16T13:20:00Z'
+  },
+  {
+    id: 'PRD-015',
+    title: 'Stainless Steel Coffee Maker - 12 Cup',
+    thumbnail: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=100&h=100&fit=crop',
+    category: 'Home & Kitchen',
+    skuCount: 1,
+    priceMin: 79.99,
+    totalStock: 28,
+    reservedStock: 5,
+    status: 'Blocked',
+    visibility: 'Unpublished',
+    lastUpdated: '2024-01-05T11:30:00Z'
   }
 ];
 
@@ -222,7 +292,8 @@ export const statusOptions = [
   'All Status',
   'Active',
   'Inactive',
-  'Draft'
+  'Draft',
+  'Blocked'
 ];
 
 export const inventoryOptions = [
@@ -230,4 +301,10 @@ export const inventoryOptions = [
   'In Stock',
   'Low Stock',
   'Out of Stock'
+];
+
+export const visibilityOptions = [
+  'All Visibility',
+  'Published',
+  'Unpublished'
 ];
