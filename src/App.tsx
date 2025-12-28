@@ -14,6 +14,7 @@ import CatalogPage from './pages/CatalogPage';
 import InventoryPage from './pages/InventoryPage';
 import OrdersPage from './pages/OrdersPage';
 import FinancePage from './pages/FinancePage';
+import DashboardLayout from './layouts/DashboardLayout';
 
 function App() {
   return (
@@ -28,7 +29,11 @@ function App() {
           <Route path="/login-seller" element={<Login />} />
           <Route path="/forget-password" element={<ForgotPassword />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
+        </Route>
+
+        {/* Dashboard Route with separate DashboardLayout */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<DashboardPage />} />
         </Route>
 
         {/* Seller Dashboard routes with SellerDashboardLayout */}
