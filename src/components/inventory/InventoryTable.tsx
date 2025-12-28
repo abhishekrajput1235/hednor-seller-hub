@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Check, X, AlertTriangle, PackageOpen } from 'lucide-react';
-import { mockInventoryData, InventoryVariant } from './mockInventoryData';
+import { mockInventoryData } from './mockInventoryData';
 import InventoryStatusBadge from './InventoryStatusBadge';
 
 interface EditingCell {
