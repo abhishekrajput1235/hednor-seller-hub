@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, ChevronDown, ChevronRight, AlertTriangle } from 'lucide-react';
+import { Search, ChevronDown, ChevronRight, AlertTriangle } from 'lucide-react';
 import { mockProducts, categories, statusOptions, inventoryOptions, visibilityOptions } from './mockData';
 import ProductCell from './ProductCell';
 import StatusBadge from './StatusBadge';
