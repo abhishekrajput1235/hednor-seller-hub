@@ -573,54 +573,52 @@ const DashboardPage = () => {
   };
 
   return (
-    <div className="pt-24 section-padding min-h-screen bg-[rgb(var(--c-neutral-100))]">
-      <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-6"
-        >
-          <h1 className="text-3xl font-bold text-[rgb(var(--c-neutral-900))] mb-1">
-            Seller Dashboard
-          </h1>
-          <p className="text-sm text-[rgb(var(--c-neutral-600))]">
-            Welcome back! Here's an overview of your store performance.
-          </p>
-        </motion.div>
+    <div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mb-6"
+      >
+        <h1 className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] mb-1">
+          Performance Overview
+        </h1>
+        <p className="text-sm text-[rgb(var(--c-neutral-600))]">
+          Welcome back! Here's an overview of your store performance.
+        </p>
+      </motion.div>
 
-        {activeTab === 'overview' ? (
-          renderTabContent()
-        ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="card p-6 h-[100%]">
-                <nav className="space-y-2">
-                  {tabs.map((tab) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => setActiveTab(tab.id)}
-                      className={`w-full flex items-center px-4 py-3 rounded-lg transition-colors duration-200 ${activeTab === tab.id
-                        ? 'bg-[rgb(var(--c-primary-500))]/10 text-[rgb(var(--c-primary-500))]'
-                        : 'text-[rgb(var(--c-neutral-600))] hover:bg-[rgb(var(--c-neutral-200))]/50'
-                        }`}
-                    >
-                      <tab.icon className="h-5 w-5 mr-3" />
-                      {tab.label}
-                    </button>
-                  ))}
-                </nav>
-              </div>
-            </div>
-
-            {/* Main Content */}
-            <div className="lg:col-span-3">
-              {renderTabContent()}
+      {activeTab === 'overview' ? (
+        renderTabContent()
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="card p-6 h-[100%]">
+              <nav className="space-y-2">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`w-full flex items-center px-4 py-3 rounded-lg transition-colors duration-200 ${activeTab === tab.id
+                      ? 'bg-[rgb(var(--c-primary-500))]/10 text-[rgb(var(--c-primary-500))]'
+                      : 'text-[rgb(var(--c-neutral-600))] hover:bg-[rgb(var(--c-neutral-200))]/50'
+                      }`}
+                  >
+                    <tab.icon className="h-5 w-5 mr-3" />
+                    {tab.label}
+                  </button>
+                ))}
+              </nav>
             </div>
           </div>
-        )}
-      </div>
+
+          {/* Main Content */}
+          <div className="lg:col-span-3">
+            {renderTabContent()}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
