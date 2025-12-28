@@ -1,4 +1,5 @@
 import React from 'react';
+import CatalogTable from '../components/catalog/CatalogTable';
 
 const CatalogPage: React.FC = () => {
   return (
@@ -6,11 +7,7 @@ const CatalogPage: React.FC = () => {
       <h2 className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] mb-4">
         Catalog Management
       </h2>
-      <div className="bg-white rounded-lg border border-[rgb(var(--c-neutral-200))] p-6">
-        <p className="text-[rgb(var(--c-neutral-600))]">
-          Manage your product catalog here. This is a placeholder page.
-        </p>
-      </div>
+      <CatalogTable />
     </div>
   );
 };
