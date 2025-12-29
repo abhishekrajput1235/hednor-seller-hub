@@ -189,7 +189,7 @@ const EnhancedCatalogTable: React.FC = () => {
               </span>
             )}
           </div>
-          
+
           {selectedProducts.size > 0 && (
             <div className="relative">
               <select
@@ -396,11 +396,11 @@ const EnhancedCatalogTable: React.FC = () => {
                         </div>
                       </td>
                     </tr>
-                    
+
                     {/* Variant Rows (expanded) */}
                     {expandedProducts.has(product.id) && product.variants && product.variants.map((variant, index) => (
-                      <VariantRow 
-                        key={variant.sku} 
+                      <VariantRow
+                        key={variant.sku}
                         variant={variant}
                         isLast={index === product.variants!.length - 1}
                       />
@@ -414,7 +414,7 @@ const EnhancedCatalogTable: React.FC = () => {
 
         {/* Pagination Placeholder */}
         {!isLoading && filteredProducts.length > 0 && (
-          <div className="px-4 py-3 border-t border-[rgb(var(--c-neutral-200))] flex items-center justify-between bg-gray-50">
+          <div className="px-4 py-3 border-t border-[rgb(var(--c-neutral-200))] flex items-center justify-between bg-gray-50 dark:bg-[rgb(var(--c-bg-secondary))]">
             <div className="text-sm text-[rgb(var(--c-neutral-600))]">
               Page 1 of 1
             </div>
@@ -460,7 +460,7 @@ const EnhancedCatalogTable: React.FC = () => {
                   />
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <div>
                   <span className="text-[rgb(var(--c-neutral-500))]">Category:</span>

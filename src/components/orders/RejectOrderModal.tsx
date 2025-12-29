@@ -48,16 +48,16 @@ const RejectOrderModal: React.FC<RejectOrderModalProps> = ({
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+        className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 dark:bg-black dark:bg-opacity-50"
         onClick={handleClose}
       >
         {/* Modal */}
         <div
-          className="bg-white rounded-lg shadow-xl max-w-md w-full"
+          className="bg-white rounded-lg shadow-xl max-w-md w-full dark:bg-[rgb(var(--c-bg-secondary))]"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-[rgb(var(--c-neutral-200))]">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-neutral-600))] dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))]">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
                 <AlertTriangle className="w-5 h-5 text-red-600" />
@@ -73,10 +73,10 @@ const RejectOrderModal: React.FC<RejectOrderModalProps> = ({
             </div>
             <button
               onClick={handleClose}
-              className="p-2 rounded-lg hover:bg-[rgb(var(--c-neutral-100))] transition-colors"
+              className="p-2 rounded-lg hover:bg-[rgb(var(--c-neutral-100))] transition-colors dark:hover:bg-[rgb(var(--c-neutral-600))]"
               title="Close"
             >
-              <X className="w-5 h-5 text-[rgb(var(--c-neutral-600))]" />
+              <X className="w-5 h-5 text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))]" />
             </button>
           </div>
 
@@ -117,7 +117,7 @@ const RejectOrderModal: React.FC<RejectOrderModalProps> = ({
                   onChange={(e) => setCustomReason(e.target.value)}
                   rows={3}
                   placeholder="Enter your reason here..."
-                  className="w-full px-3 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent text-sm"
+                  className="w-full px-3 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent text-sm dark:border-[rgb(var(--c-neutral-600))] dark:bg-[rgb(var(--c-bg-secondary))] dark:text-[rgb(var(--c-neutral-900))]"
                 />
               </div>
             )}

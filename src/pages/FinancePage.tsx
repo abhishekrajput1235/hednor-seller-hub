@@ -277,7 +277,7 @@ const FinancePage: React.FC = () => {
                 <select
                   value={dateRange}
                   onChange={(e) => setDateRange(e.target.value)}
-                  className="w-full px-4 py-2.5 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent appearance-none bg-white"
+                  className="w-full px-4 py-2.5 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent appearance-none bg-white dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))] dark:hover:bg-[rgb(var(--c-neutral-100))] dark:hover:text-[rgb(var(--c-neutral-900))]"
                 >
                   <option value="today">Today</option>
                   <option value="last7days">Last 7 Days</option>
@@ -292,7 +292,7 @@ const FinancePage: React.FC = () => {
             </div>
 
             {/* Transaction Type Filter */}
-            <div>
+            <div className="dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))]">
               <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Transaction Type
               </label>
@@ -300,7 +300,7 @@ const FinancePage: React.FC = () => {
                 <select
                   value={transactionType}
                   onChange={(e) => setTransactionType(e.target.value)}
-                  className="w-full px-4 py-2.5 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent appearance-none bg-white"
+                  className="w-full px-4 py-2.5 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent appearance-none bg-white dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))] dark:hover:bg-[rgb(var(--c-neutral-100))] dark:hover:text-[rgb(var(--c-neutral-900))]"
                 >
                   <option value="all">All Types</option>
                   <option value="Order">Orders</option>
@@ -320,7 +320,7 @@ const FinancePage: React.FC = () => {
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="w-full px-4 py-2.5 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent appearance-none bg-white"
+                  className="w-full px-4 py-2.5 pr-10 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent appearance-none bg-white dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))] dark:hover:bg-[rgb(var(--c-neutral-100))] dark:hover:text-[rgb(var(--c-neutral-900))]"
                 >
                   <option value="all">All Statuses</option>
                   <option value="Completed">Completed</option>
@@ -337,10 +337,10 @@ const FinancePage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.35 }}
-          className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
+          className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))] dark:hover:bg-[rgb(var(--c-neutral-100))] dark:hover:text-[rgb(var(--c-neutral-900))]"
         >
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))] dark:hover:bg-[rgb(var(--c-neutral-100))] dark:hover:text-[rgb(var(--c-neutral-900))] dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))] dark:hover:bg-[rgb(var(--c-neutral-100))] dark:hover:text-[rgb(var(--c-neutral-900))]">
               <thead className="bg-gray-50 dark:bg-gray-700 sticky top-0">
                 <tr>
                   <th className="px-5 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
@@ -363,20 +363,20 @@ const FinancePage: React.FC = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+              <tbody className="divide-y divide-gray-200 dark:divide-gray-700 dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))] dark:hover:bg-[rgb(var(--c-neutral-100))] dark:hover:text-[rgb(var(--c-neutral-900))]">
                 {filteredTransactions.map((txn, index) => (
                   <motion.tr
                     key={txn.id}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.2, delay: index * 0.02 }}
-                    className="hover:bg-gray-50 dark:bg-gray-700 transition-colors"
+                    className="hover:bg-gray-50 dark:bg-gray-700 transition-colors dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))] dark:hover:bg-[rgb(var(--c-neutral-100))] dark:hover:text-[rgb(var(--c-neutral-900))]"
                   >
-                    <td className="px-5 py-4 text-sm text-gray-900 dark:text-white">
-                      {new Date(txn.date).toLocaleDateString('en-IN', { 
-                        day: '2-digit', 
-                        month: 'short', 
-                        year: 'numeric' 
+                    <td className="px-5 py-4 text-sm text-gray-900 dark:text-white ">
+                      {new Date(txn.date).toLocaleDateString('en-IN', {
+                        day: '2-digit',
+                        month: 'short',
+                        year: 'numeric'
                       })}
                     </td>
                     <td className="px-5 py-4 text-sm font-mono text-gray-600 dark:text-gray-400 dark:text-gray-400">

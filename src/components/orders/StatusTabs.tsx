@@ -25,7 +25,7 @@ const StatusTabs: React.FC<StatusTabsProps> = ({ activeStatus, onStatusChange, c
   ];
 
   return (
-    <div className="border-b border-[rgb(var(--c-neutral-200))] bg-white">
+    <div className="border-b border-[rgb(var(--c-neutral-200))] bg-white dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))]">
       <div className="flex overflow-x-auto">
         {tabs.map((tab) => (
           <button
@@ -33,10 +33,9 @@ const StatusTabs: React.FC<StatusTabsProps> = ({ activeStatus, onStatusChange, c
             onClick={() => onStatusChange(tab.value)}
             className={`
               relative px-4 py-3 text-sm font-medium whitespace-nowrap transition-colors
-              ${
-                activeStatus === tab.value
-                  ? 'text-[rgb(var(--c-primary-500))] border-b-2 border-[rgb(var(--c-primary-500))]'
-                  : 'text-[rgb(var(--c-neutral-600))] hover:text-[rgb(var(--c-neutral-900))]'
+              ${activeStatus === tab.value
+                ? 'text-[rgb(var(--c-primary-500))] border-b-2 border-[rgb(var(--c-primary-500))]'
+                : 'text-[rgb(var(--c-neutral-600))] hover:text-[rgb(var(--c-neutral-900))]'
               }
             `}
           >
@@ -44,11 +43,8 @@ const StatusTabs: React.FC<StatusTabsProps> = ({ activeStatus, onStatusChange, c
             <span
               className={`
                 ml-2 px-2 py-0.5 text-xs font-semibold rounded-full
-                ${
-                  activeStatus === tab.value
-                    ? 'bg-[rgb(var(--c-primary-500))] text-[rgb(var(--c-neutral-900))]'
-                    : 'bg-[rgb(var(--c-neutral-200))] text-[rgb(var(--c-neutral-600))]'
-                }
+                ${activeStatus === tab.value
+                  ? 'bg-[rgb(var(--c-primary-500))] text-[rgb(var(--c-neutral-900))] dark:bg-[rgb(var(--c-primary-500))] dark:text-[rgb(var(--c-neutral-900))]' : 'bg-[rgb(var(--c-neutral-200))] text-[rgb(var(--c-neutral-600))] dark:bg-[rgb(var(--c-neutral-200))] dark:text-[rgb(var(--c-neutral-600))]'}
               `}
             >
               {tab.count}

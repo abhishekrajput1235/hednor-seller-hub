@@ -14,9 +14,9 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      month: 'long', 
-      day: 'numeric', 
+    return date.toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
       year: 'numeric',
       hour: '2-digit',
       minute: '2-digit'
@@ -32,7 +32,7 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
       {/* Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity dark:bg-[rgb(var(--c-neutral-900))]"
           onClick={onClose}
         />
       )}
@@ -40,7 +40,7 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
       {/* Drawer */}
       <div
         className={`
-          fixed right-0 top-0 h-full w-full md:w-[600px] bg-white shadow-2xl z-50
+          fixed right-0 top-0 h-full w-full md:w-[600px] bg-white shadow-2xl z-50 dark:bg-[rgb(var(--c-bg-secondary))]
           transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
@@ -58,25 +58,25 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-lg hover:bg-[rgb(var(--c-neutral-100))] transition-colors"
+              className="p-2 rounded-lg hover:bg-[rgb(var(--c-neutral-100))] transition-colors dark:bg-[rgb(var(--c-neutral-900))] dark:hover:bg-[rgb(var(--c-neutral-100))]"
               title="Close"
             >
-              <X className="w-5 h-5 text-[rgb(var(--c-neutral-600))]" />
+              <X className="w-5 h-5 text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-900))]" />
             </button>
           </div>
 
           {/* Content */}
           <div className="flex-1 overflow-y-auto p-6">
             {/* Order Summary */}
-            <section className="mb-6">
-              <h3 className="text-sm font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider mb-3">
+            <section className="mb-6 dark:bg-[rgb(var(--c-neutral-900))] dark:border-[rgb(var(--c-neutral-600))]">
+              <h3 className="text-sm font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider mb-3 dark:text-[rgb(var(--c-neutral-100))]">
                 Order Summary
               </h3>
-              <div className="bg-[rgb(var(--c-neutral-50))] rounded-lg p-4 space-y-3">
+              <div className="bg-[rgb(var(--c-neutral-50))] rounded-lg p-4 space-y-3 dark:bg-[rgb(var(--c-neutral-900))] dark:border-[rgb(var(--c-neutral-600))]">
                 <div className="flex justify-between items-start">
                   <div>
-                    <p className="text-xs text-[rgb(var(--c-neutral-600))]">Order Date</p>
-                    <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))]">
+                    <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-100))]">Order Date</p>
+                    <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-neutral-100))]">
                       {formatDate(order.orderDate)}
                     </p>
                   </div>
@@ -84,31 +84,31 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
                 </div>
                 <div className="flex justify-between">
                   <div>
-                    <p className="text-xs text-[rgb(var(--c-neutral-600))]">Customer</p>
-                    <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))]">
+                    <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-100))]">Customer</p>
+                    <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-neutral-100))]">
                       {order.customerName}
                     </p>
-                    <p className="text-xs text-[rgb(var(--c-neutral-500))]">
+                    <p className="text-xs text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-neutral-100))]">
                       {order.customerEmail}
                     </p>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs text-[rgb(var(--c-neutral-600))]">Order Value</p>
-                    <p className="text-lg font-bold text-[rgb(var(--c-neutral-900))]">
+                    <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-100))]">Order Value</p>
+                    <p className="text-lg font-bold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-neutral-100))]">
                       {formatCurrency(order.orderValue)}
                     </p>
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs text-[rgb(var(--c-neutral-600))]">Ship By Date</p>
-                  <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))]">
+                  <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-100))]">Ship By Date</p>
+                  <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-neutral-100))]">
                     {formatDate(order.shipByDate)}
                   </p>
                 </div>
                 {order.trackingNumber && (
                   <div>
-                    <p className="text-xs text-[rgb(var(--c-neutral-600))]">Tracking Number</p>
-                    <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))] flex items-center gap-2">
+                    <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-100))]">Tracking Number</p>
+                    <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-neutral-100))] flex items-center gap-2">
                       <Truck className="w-4 h-4" />
                       {order.trackingNumber}
                     </p>
@@ -118,8 +118,8 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
             </section>
 
             {/* Items to Fulfill */}
-            <section className="mb-6">
-              <h3 className="text-sm font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider mb-3 flex items-center gap-2">
+            <section className="mb-6 dark:bg-[rgb(var(--c-neutral-900))] dark:border-[rgb(var(--c-neutral-600))]">
+              <h3 className="text-sm font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider mb-3 flex items-center gap-2 dark:text-[rgb(var(--c-neutral-100))]">
                 <Package className="w-4 h-4" />
                 Items to Fulfill ({order.items.length})
               </h3>
@@ -127,7 +127,7 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
                 {order.items.map((item) => (
                   <div
                     key={item.id}
-                    className="flex gap-4 p-4 bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg"
+                    className="flex gap-4 p-4 bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg dark:bg-[rgb(var(--c-neutral-900))] dark:border-[rgb(var(--c-neutral-600))]"
                   >
                     {item.image ? (
                       <img
@@ -141,15 +141,15 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
                       </div>
                     )}
                     <div className="flex-1">
-                      <h4 className="text-sm font-medium text-[rgb(var(--c-neutral-900))] mb-1">
+                      <h4 className="text-sm font-medium text-[rgb(var(--c-neutral-900))] mb-1 dark:text-[rgb(var(--c-neutral-100))]">
                         {item.name}
                       </h4>
-                      <p className="text-xs text-[rgb(var(--c-neutral-600))] mb-2">
+                      <p className="text-xs text-[rgb(var(--c-neutral-600))] mb-2 dark:text-[rgb(var(--c-neutral-100))]">
                         SKU: {item.sku}
                       </p>
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-[rgb(var(--c-neutral-600))]">
-                          Qty: <span className="font-medium text-[rgb(var(--c-neutral-900))]">{item.quantity}</span>
+                        <span className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-neutral-100))]">
+                          Qty: <span className="font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-neutral-100))]">{item.quantity}</span>
                         </span>
                         <span className="text-sm font-semibold text-[rgb(var(--c-neutral-900))]">
                           {formatCurrency(item.price * item.quantity)}
@@ -162,12 +162,12 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
             </section>
 
             {/* Shipping Address */}
-            <section className="mb-6">
-              <h3 className="text-sm font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider mb-3 flex items-center gap-2">
+            <section className="mb-6 dark:bg-[rgb(var(--c-neutral-900))] dark:border-[rgb(var(--c-neutral-600))]">
+              <h3 className="text-sm font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider mb-3 flex items-center gap-2 dark:text-[rgb(var(--c-neutral-100))]">
                 <MapPin className="w-4 h-4" />
                 Shipping Address
               </h3>
-              <div className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-4">
+              <div className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-4 dark:bg-[rgb(var(--c-neutral-900))] dark:border-[rgb(var(--c-neutral-600))]">
                 <p className="font-medium text-[rgb(var(--c-neutral-900))] mb-2">
                   {order.shippingAddress.name}
                 </p>
@@ -189,12 +189,12 @@ const OrderDetailsDrawer: React.FC<OrderDetailsDrawerProps> = ({ order, isOpen, 
             </section>
 
             {/* Payment Method */}
-            <section>
-              <h3 className="text-sm font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider mb-3 flex items-center gap-2">
+            <section className="mb-6 dark:bg-[rgb(var(--c-neutral-900))] dark:border-[rgb(var(--c-neutral-600))]">
+              <h3 className="text-sm font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider mb-3 flex items-center gap-2 dark:text-[rgb(var(--c-neutral-100))]">
                 <CreditCard className="w-4 h-4" />
                 Payment Method
               </h3>
-              <div className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-4">
+              <div className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-4 dark:bg-[rgb(var(--c-neutral-900))] dark:border-[rgb(var(--c-neutral-600))]">
                 <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))]">
                   {order.paymentMethod}
                 </p>
