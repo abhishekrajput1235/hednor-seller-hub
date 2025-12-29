@@ -12,7 +12,7 @@ interface SellerHeaderProps {
 const SellerHeader: React.FC<SellerHeaderProps> = ({ onMenuClick, onToggleCollapse, isCollapsed }) => {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, isThemeToggleEnabled } = useTheme();
 
   // Mock notifications
   const notifications = [
@@ -58,18 +58,20 @@ const SellerHeader: React.FC<SellerHeaderProps> = ({ onMenuClick, onToggleCollap
 
       {/* Right Section */}
       <div className="flex items-center space-x-3">
-        {/* Theme Toggle */}
-        <button
-          onClick={toggleTheme}
-          className="p-2 rounded-md hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-secondary))] text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))] transition-colors"
-          title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-        >
-          {theme === 'light' ? (
-            <Moon className="h-5 w-5" />
-          ) : (
-            <Sun className="h-5 w-5" />
-          )}
-        </button>
+        {/* Theme Toggle - Only show on dashboard routes */}
+        {isThemeToggleEnabled && (
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-md hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-secondary))] text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))] transition-colors"
+            title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+          >
+            {theme === 'light' ? (
+              <Moon className="h-5 w-5" />
+            ) : (
+              <Sun className="h-5 w-5" />
+            )}
+          </button>
+        )}
 
         {/* Notifications */}
         <div className="relative">
