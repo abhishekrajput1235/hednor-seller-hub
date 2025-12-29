@@ -86,7 +86,7 @@ const LandingPage = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[rgb(var(--c-neutral-900))] mb-6">
                 Sell online With {' '}
                 <span className="gradient-text">HEDNOR</span>{' '}
-                
+
               </h1>
               <p className="text-lg md:text-xl text-[rgb(var(--c-neutral-600))] mb-8 leading-relaxed">
                 Join thousands of successful sellers and grow your business with our
@@ -247,7 +247,7 @@ const LandingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-[rgb(var(--c-neutral-900))] text-white">
+      <section className="section-padding bg-white text-black">
         <div className="container-max text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Start Your Selling Journey?
