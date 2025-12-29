@@ -67,6 +67,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(var(--c-neutral-100));
   color: rgb(var(--c-neutral-900));
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .animate-fade-in {
@@ -113,11 +114,11 @@ body {
 }
 
 .card {
-  @apply bg-white rounded-xl shadow-lg border border-[rgb(var(--c-neutral-200))] transition-all duration-200 hover:shadow-xl;
+  @apply bg-white dark:bg-[rgb(var(--c-bg-secondary))] rounded-xl shadow-lg dark:shadow-2xl border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] transition-all duration-200 hover:shadow-xl dark:hover:shadow-2xl;
 }
 
 .input-field {
-  @apply w-full px-4 py-3 border border-[rgb(var(--c-neutral-300))] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent transition-all duration-200;
+  @apply w-full px-4 py-3 border border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] bg-white dark:bg-[rgb(var(--c-bg-secondary))] text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent transition-all duration-200;
 }
 
 .section-padding {
