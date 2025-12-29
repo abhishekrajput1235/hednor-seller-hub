@@ -249,7 +249,7 @@ const EnhancedCatalogTable: React.FC = () => {
                 <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Last Updated
                 </th>
-                <th className="px-4 py-2.5 text-right text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-right text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Actions
                 </th>
               </tr>

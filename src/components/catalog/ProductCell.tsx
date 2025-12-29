@@ -28,7 +28,7 @@ const ProductCell: React.FC<ProductCellProps> = ({ thumbnail, title, skuCount, p
       </div>
       <div className="flex-1 min-w-0">
         <div 
-          className="text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] truncate hover:text-clip hover:whitespace-normal hover:absolute hover:bg-white dark:hover:bg-[rgb(var(--c-bg-secondary))] hover:z-10 hover:p-2 hover:shadow-lg hover:rounded hover:border hover:border-gray-200 dark:hover:border-[rgb(var(--c-border-primary))] hover:max-w-md"
+          className="text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] truncate hover:text-clip hover:whitespace-normal hover:absolute hover:bg-white dark:hover:bg-[rgb(var(--c-bg-secondary))] hover:z-10 hover:p-2 hover:shadow-lg hover:rounded hover:border hover:border-[rgb(var(--c-neutral-200))] dark:hover:border-[rgb(var(--c-border-primary))] hover:max-w-md"
           title={title}
         >
           {title}

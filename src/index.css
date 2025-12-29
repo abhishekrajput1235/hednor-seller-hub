@@ -35,12 +35,12 @@
   --c-neutral-900: 243, 244, 246; /* light text for dark mode */
   --c-neutral-800: 209, 213, 219;
   --c-neutral-700: 156, 163, 175;
-  --c-neutral-600: 156, 163, 175;
-  --c-neutral-500: 107, 114, 128;
-  --c-neutral-400: 75, 85, 99;
-  --c-neutral-300: 55, 65, 81;
-  --c-neutral-200: 55, 65, 81;
-  --c-neutral-50: 31, 41, 55;
+  --c-neutral-600: 107, 114, 128;
+  --c-neutral-500: 75, 85, 99;
+  --c-neutral-400: 55, 65, 81;
+  --c-neutral-300: 45, 55, 72;
+  --c-neutral-200: 35, 46, 63;
+  --c-neutral-50: 24, 33, 47;
   
   /* Semantic colors for dark mode */
   --c-bg-primary: 17, 24, 39;
