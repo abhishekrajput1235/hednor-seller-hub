@@ -94,10 +94,10 @@ const OrdersPage: React.FC = () => {
     <div>
       {/* Header */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] mb-2">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
           Order Fulfillment
         </h2>
-        <p className="text-sm text-[rgb(var(--c-neutral-600))]">
+        <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
           Manage and process customer orders efficiently
         </p>
       </div>
@@ -111,10 +111,10 @@ const OrdersPage: React.FC = () => {
             placeholder="Search by order ID, customer name, or email..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent text-sm"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent text-sm"
           />
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-[rgb(var(--c-neutral-700))] bg-white border border-[rgb(var(--c-neutral-300))] rounded-lg hover:bg-[rgb(var(--c-neutral-50))] transition-colors">
+        <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:bg-gray-700 transition-colors">
           <Filter className="w-4 h-4" />
           Filters
         </button>
@@ -141,15 +141,15 @@ const OrdersPage: React.FC = () => {
       </div>
 
       {/* Pagination Placeholder */}
-      <div className="mt-4 flex items-center justify-between bg-white rounded-lg border border-[rgb(var(--c-neutral-200))] px-4 py-3">
-        <p className="text-sm text-[rgb(var(--c-neutral-600))]">
+      <div className="mt-4 flex items-center justify-between bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 px-4 py-3">
+        <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
           Showing {filteredOrders.length} of {filteredOrders.length} orders
         </p>
         <div className="flex gap-2">
-          <button className="px-3 py-1.5 text-sm font-medium text-[rgb(var(--c-neutral-700))] bg-white border border-[rgb(var(--c-neutral-300))] rounded hover:bg-[rgb(var(--c-neutral-50))] transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+          <button className="px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
             Previous
           </button>
-          <button className="px-3 py-1.5 text-sm font-medium text-[rgb(var(--c-neutral-700))] bg-white border border-[rgb(var(--c-neutral-300))] rounded hover:bg-[rgb(var(--c-neutral-50))] transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+          <button className="px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
             Next
           </button>
         </div>

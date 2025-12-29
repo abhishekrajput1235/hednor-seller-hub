@@ -22,20 +22,19 @@ const SellerDashboardLayout: React.FC = () => {
   return (
     <div className="min-h-screen bg-[rgb(var(--c-neutral-100))] dark:bg-[rgb(var(--c-bg-tertiary))] transition-colors duration-200">
       {/* Sidebar */}
-      <SellerSidebar 
-        isOpen={isSidebarOpen} 
+      <SellerSidebar
+        isOpen={isSidebarOpen}
         onClose={handleCloseSidebar}
         isCollapsed={isSidebarCollapsed}
       />
 
       {/* Main Content Area */}
-      <div 
-        className={`min-h-screen transition-all duration-300 ${
-          isSidebarCollapsed ? 'lg:ml-20' : 'lg:ml-64'
-        }`}
+      <div
+        className={`min-h-screen transition-all duration-300 ${isSidebarCollapsed ? 'lg:ml-20' : 'lg:ml-64'
+          }`}
       >
         {/* Header */}
-        <SellerHeader 
+        <SellerHeader
           onMenuClick={handleMenuClick}
           onToggleCollapse={handleToggleCollapse}
           isCollapsed={isSidebarCollapsed}

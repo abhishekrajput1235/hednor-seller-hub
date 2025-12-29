@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  Package, 
-  ShoppingCart, 
-  Warehouse, 
+import {
+  LayoutDashboard,
+  Package,
+  ShoppingCart,
+  Warehouse,
   DollarSign,
   X
 } from 'lucide-react';
@@ -21,6 +21,7 @@ const SellerSidebar: React.FC<SellerSidebarProps> = ({ isOpen, onClose, isCollap
 
   const navigationItems = [
     { name: 'Dashboard', path: '/seller/dashboard', icon: LayoutDashboard },
+    { name: 'Products', path: '/seller/products', icon: Package },
     { name: 'Catalog', path: '/seller/catalog', icon: Package },
     { name: 'Inventory', path: '/seller/inventory', icon: Warehouse },
     { name: 'Orders', path: '/seller/orders', icon: ShoppingCart },
@@ -33,7 +34,7 @@ const SellerSidebar: React.FC<SellerSidebarProps> = ({ isOpen, onClose, isCollap
     <>
       {/* Mobile Overlay */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 dark:bg-black/70 z-40 lg:hidden"
           onClick={onClose}
         />
@@ -41,11 +42,9 @@ const SellerSidebar: React.FC<SellerSidebarProps> = ({ isOpen, onClose, isCollap
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full bg-white dark:bg-[rgb(var(--c-bg-primary))] border-r border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] z-50 transition-all duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-0 ${
-          isCollapsed ? 'lg:w-20' : 'lg:w-64'
-        } w-64`}
+        className={`fixed top-0 left-0 h-full bg-white dark:bg-[rgb(var(--c-bg-primary))] border-r border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] z-50 transition-all duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
+          } lg:translate-x-0 ${isCollapsed ? 'lg:w-20' : 'lg:w-64'
+          } w-64`}
       >
         {/* Logo Section */}
         <div className="h-16 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] flex items-center justify-between px-4">
@@ -73,11 +72,10 @@ const SellerSidebar: React.FC<SellerSidebarProps> = ({ isOpen, onClose, isCollap
               key={item.path}
               to={item.path}
               onClick={() => onClose()}
-              className={`flex items-center px-3 py-3 rounded-lg transition-colors duration-200 ${
-                isActive(item.path)
+              className={`flex items-center px-3 py-3 rounded-lg transition-colors duration-200 ${isActive(item.path)
                   ? 'bg-[rgb(var(--c-primary-500))]/10 text-[rgb(var(--c-primary-500))]'
                   : 'text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))] hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-secondary))] hover:text-[rgb(var(--c-neutral-900))] dark:hover:text-[rgb(var(--c-text-primary))]'
-              } ${isCollapsed ? 'justify-center' : ''}`}
+                } ${isCollapsed ? 'justify-center' : ''}`}
               title={isCollapsed ? item.name : ''}
             >
               <item.icon className={`h-5 w-5 ${isCollapsed ? '' : 'mr-3'} flex-shrink-0`} />

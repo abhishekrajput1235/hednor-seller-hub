@@ -1,6 +1,6 @@
-# Hednor Seller Hub 🛍️
+# CloudKidd Seller Hub 🛍️
 
-**Hednor Seller Hub** is a robust and scalable web platform that allows sellers on the Hednor marketplace to manage their entire business from a single dashboard. Built with a modern tech stack — **FastAPI**, **Next.js**, and **PostgreSQL** — it offers high performance, clean architecture, and a seamless user experience.
+**CloudKidd Seller Hub** is a robust and scalable web platform that allows sellers on the CloudKidd marketplace to manage their entire business from a single dashboard. Built with a modern tech stack — **FastAPI**, **Next.js**, and **PostgreSQL** — it offers high performance, clean architecture, and a seamless user experience.
 
 ## 🔧 Tech Stack
 

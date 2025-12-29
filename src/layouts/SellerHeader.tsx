@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, Bell, ChevronDown, User, Settings, LogOut, ChevronsLeft, ChevronsRight, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 interface SellerHeaderProps {
   onMenuClick: () => void;
@@ -81,7 +82,7 @@ const SellerHeader: React.FC<SellerHeaderProps> = ({ onMenuClick, onToggleCollap
           >
             <Bell className="h-5 w-5" />
             {unreadCount > 0 && (
-              <span className="absolute top-1 right-1 h-4 w-4 bg-[rgb(var(--c-error-500))] text-white text-xs rounded-full flex items-center justify-center">
+              <span className="absolute top-1 right-1 h-4 w-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
                 {unreadCount}
               </span>
             )}
@@ -90,7 +91,7 @@ const SellerHeader: React.FC<SellerHeaderProps> = ({ onMenuClick, onToggleCollap
           {/* Notifications Dropdown */}
           {showNotifications && (
             <>
-              <div 
+              <div
                 className="fixed inset-0 z-40"
                 onClick={() => setShowNotifications(false)}
               />
@@ -102,9 +103,8 @@ const SellerHeader: React.FC<SellerHeaderProps> = ({ onMenuClick, onToggleCollap
                   {notifications.map((notification) => (
                     <div
                       key={notification.id}
-                      className={`p-4 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] hover:bg-[rgb(var(--c-neutral-50))] dark:hover:bg-[rgb(var(--c-bg-tertiary))] transition-colors ${
-                        notification.unread ? 'bg-[rgb(var(--c-primary-500))]/5 dark:bg-[rgb(var(--c-primary-500))]/10' : ''
-                      }`}
+                      className={`p-4 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] hover:bg-[rgb(var(--c-neutral-50))] dark:hover:bg-[rgb(var(--c-bg-tertiary))] transition-colors ${notification.unread ? 'bg-[rgb(var(--c-primary-500))]/5 dark:bg-[rgb(var(--c-primary-500))]/10' : ''
+                        }`}
                     >
                       <p className="text-sm text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">{notification.message}</p>
                       <p className="text-xs text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))] mt-1">{notification.time}</p>
@@ -130,8 +130,8 @@ const SellerHeader: React.FC<SellerHeaderProps> = ({ onMenuClick, onToggleCollap
             }}
             className="flex items-center space-x-2 p-2 rounded-md hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-secondary))] transition-colors"
           >
-            <div className="h-8 w-8 rounded-full bg-[rgb(var(--c-primary-500))]/20 flex items-center justify-center">
-              <User className="h-4 w-4 text-[rgb(var(--c-primary-500))]" />
+            <div className="h-8 w-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+              <User className="h-4 w-4 text-blue-600 dark:text-blue-400" />
             </div>
             <span className="hidden md:block text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
               My Store
@@ -142,7 +142,7 @@ const SellerHeader: React.FC<SellerHeaderProps> = ({ onMenuClick, onToggleCollap
           {/* Profile Dropdown Menu */}
           {showProfileDropdown && (
             <>
-              <div 
+              <div
                 className="fixed inset-0 z-40"
                 onClick={() => setShowProfileDropdown(false)}
               />
@@ -152,10 +152,10 @@ const SellerHeader: React.FC<SellerHeaderProps> = ({ onMenuClick, onToggleCollap
                   <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-tertiary))] mt-0.5">seller@example.com</p>
                 </div>
                 <div className="p-2">
-                  <button className="w-full flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] transition-colors">
+                  <Link to="/seller/profile" className="w-full flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] transition-colors">
                     <User className="h-4 w-4" />
                     <span className="text-sm">Profile</span>
-                  </button>
+                  </Link>
                   <button className="w-full flex items-center space-x-3 px-3 py-2 rounded-md hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] transition-colors">
                     <Settings className="h-4 w-4" />
                     <span className="text-sm">Settings</span>
