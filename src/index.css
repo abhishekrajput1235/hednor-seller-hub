@@ -15,8 +15,42 @@
   --c-neutral-400: 156, 163, 175;
   --c-neutral-300: 209, 213, 219;
   --c-neutral-200: 229, 231, 235;
+  --c-neutral-50: 249, 250, 251;
   --c-warning-500: 245, 158, 11;
   --c-error-500: 239, 68, 68;
+  
+  /* Semantic colors for light mode */
+  --c-bg-primary: 255, 255, 255;
+  --c-bg-secondary: 249, 250, 251;
+  --c-bg-tertiary: 243, 244, 246;
+  --c-text-primary: 17, 24, 39;
+  --c-text-secondary: 75, 85, 99;
+  --c-text-tertiary: 107, 114, 128;
+  --c-border-primary: 229, 231, 235;
+  --c-border-secondary: 209, 213, 219;
+}
+
+.dark {
+  --c-neutral-100: 31, 41, 55; /* dark background */
+  --c-neutral-900: 243, 244, 246; /* light text for dark mode */
+  --c-neutral-800: 209, 213, 219;
+  --c-neutral-700: 156, 163, 175;
+  --c-neutral-600: 107, 114, 128;
+  --c-neutral-500: 75, 85, 99;
+  --c-neutral-400: 55, 65, 81;
+  --c-neutral-300: 45, 55, 72;
+  --c-neutral-200: 35, 46, 63;
+  --c-neutral-50: 24, 33, 47;
+  
+  /* Semantic colors for dark mode */
+  --c-bg-primary: 17, 24, 39;
+  --c-bg-secondary: 31, 41, 55;
+  --c-bg-tertiary: 55, 65, 81;
+  --c-text-primary: 243, 244, 246;
+  --c-text-secondary: 209, 213, 219;
+  --c-text-tertiary: 156, 163, 175;
+  --c-border-primary: 55, 65, 81;
+  --c-border-secondary: 75, 85, 99;
 }
 
 * {
@@ -33,6 +67,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(var(--c-neutral-100));
   color: rgb(var(--c-neutral-900));
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .animate-fade-in {
@@ -79,11 +114,11 @@ body {
 }
 
 .card {
-  @apply bg-white rounded-xl shadow-lg border border-[rgb(var(--c-neutral-200))] transition-all duration-200 hover:shadow-xl;
+  @apply bg-white dark:bg-[rgb(var(--c-bg-secondary))] rounded-xl shadow-lg dark:shadow-2xl border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] transition-all duration-200 hover:shadow-xl dark:hover:shadow-2xl;
 }
 
 .input-field {
-  @apply w-full px-4 py-3 border border-[rgb(var(--c-neutral-300))] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent transition-all duration-200;
+  @apply w-full px-4 py-3 border border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] bg-white dark:bg-[rgb(var(--c-bg-secondary))] text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent transition-all duration-200;
 }
 
 .section-padding {

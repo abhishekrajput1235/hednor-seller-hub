@@ -34,25 +34,25 @@ const SellerSidebar: React.FC<SellerSidebarProps> = ({ isOpen, onClose, isCollap
       {/* Mobile Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/50 dark:bg-black/70 z-40 lg:hidden"
           onClick={onClose}
         />
       )}
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full bg-white border-r border-[rgb(var(--c-neutral-200))] z-50 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full bg-white dark:bg-[rgb(var(--c-bg-primary))] border-r border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] z-50 transition-all duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } lg:translate-x-0 ${
           isCollapsed ? 'lg:w-20' : 'lg:w-64'
         } w-64`}
       >
         {/* Logo Section */}
-        <div className="h-16 border-b border-[rgb(var(--c-neutral-200))] flex items-center justify-between px-4">
+        <div className="h-16 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] flex items-center justify-between px-4">
           <Link to="/seller/dashboard" className="flex items-center space-x-3">
             <img src={logo} alt="Logo" className="h-8 w-8" />
             {!isCollapsed && (
-              <span className="text-lg font-bold text-[rgb(var(--c-neutral-900))]">
+              <span className="text-lg font-bold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                 SellerHub
               </span>
             )}
@@ -60,7 +60,7 @@ const SellerSidebar: React.FC<SellerSidebarProps> = ({ isOpen, onClose, isCollap
           {/* Mobile Close Button */}
           <button
             onClick={onClose}
-            className="lg:hidden p-1 rounded-md hover:bg-[rgb(var(--c-neutral-100))] text-[rgb(var(--c-neutral-600))]"
+            className="lg:hidden p-1 rounded-md hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-secondary))] text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))] transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
@@ -76,7 +76,7 @@ const SellerSidebar: React.FC<SellerSidebarProps> = ({ isOpen, onClose, isCollap
               className={`flex items-center px-3 py-3 rounded-lg transition-colors duration-200 ${
                 isActive(item.path)
                   ? 'bg-[rgb(var(--c-primary-500))]/10 text-[rgb(var(--c-primary-500))]'
-                  : 'text-[rgb(var(--c-neutral-600))] hover:bg-[rgb(var(--c-neutral-100))] hover:text-[rgb(var(--c-neutral-900))]'
+                  : 'text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))] hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-secondary))] hover:text-[rgb(var(--c-neutral-900))] dark:hover:text-[rgb(var(--c-text-primary))]'
               } ${isCollapsed ? 'justify-center' : ''}`}
               title={isCollapsed ? item.name : ''}
             >
@@ -90,9 +90,9 @@ const SellerSidebar: React.FC<SellerSidebarProps> = ({ isOpen, onClose, isCollap
 
         {/* Seller Info Section (bottom) */}
         {!isCollapsed && (
-          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[rgb(var(--c-neutral-200))] bg-[rgb(var(--c-neutral-50))]">
-            <div className="text-xs text-[rgb(var(--c-neutral-600))]">
-              <p className="font-medium text-[rgb(var(--c-neutral-900))]">Store Name</p>
+          <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] bg-[rgb(var(--c-neutral-50))] dark:bg-[rgb(var(--c-bg-secondary))]">
+            <div className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-tertiary))]">
+              <p className="font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">Store Name</p>
               <p className="mt-0.5">Seller ID: #12345</p>
             </div>
           </div>

@@ -92,25 +92,25 @@ const EnhancedCatalogTable: React.FC = () => {
   };
 
   const getStockColor = (stock: number) => {
-    if (stock === 0) return 'text-red-600';
-    if (stock <= 10) return 'text-orange-600';
-    return 'text-[rgb(var(--c-neutral-900))]';
+    if (stock === 0) return 'text-red-600 dark:text-red-400';
+    if (stock <= 10) return 'text-orange-600 dark:text-orange-400';
+    return 'text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]';
   };
 
   return (
     <div className="space-y-4">
       {/* Filter Bar */}
-      <div className="bg-white rounded-lg border border-[rgb(var(--c-neutral-200))] p-4">
+      <div className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] rounded-lg border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] p-4">
         <div className="flex flex-col lg:flex-row gap-4">
           {/* Search */}
           <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))]" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] dark:text-[rgb(var(--c-text-tertiary))]" />
             <input
               type="text"
               placeholder="Search products, SKU..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] bg-white dark:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent"
             />
           </div>
 
@@ -119,7 +119,7 @@ const EnhancedCatalogTable: React.FC = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="appearance-none w-full lg:w-48 pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent bg-white"
+              className="appearance-none w-full lg:w-48 pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] bg-white dark:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent"
             >
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
@@ -127,7 +127,7 @@ const EnhancedCatalogTable: React.FC = () => {
                 </option>
               ))}
             </select>
-            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] pointer-events-none" />
+            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] dark:text-[rgb(var(--c-text-tertiary))] pointer-events-none" />
           </div>
 
           {/* Status Filter */}
@@ -135,7 +135,7 @@ const EnhancedCatalogTable: React.FC = () => {
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
-              className="appearance-none w-full lg:w-40 pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent bg-white"
+              className="appearance-none w-full lg:w-40 pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] bg-white dark:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent"
             >
               {statusOptions.map((status) => (
                 <option key={status} value={status}>
@@ -143,7 +143,7 @@ const EnhancedCatalogTable: React.FC = () => {
                 </option>
               ))}
             </select>
-            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] pointer-events-none" />
+            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] dark:text-[rgb(var(--c-text-tertiary))] pointer-events-none" />
           </div>
 
           {/* Inventory Filter */}
@@ -151,7 +151,7 @@ const EnhancedCatalogTable: React.FC = () => {
             <select
               value={selectedInventory}
               onChange={(e) => setSelectedInventory(e.target.value)}
-              className="appearance-none w-full lg:w-40 pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent bg-white"
+              className="appearance-none w-full lg:w-40 pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] bg-white dark:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent"
             >
               {inventoryOptions.map((inv) => (
                 <option key={inv} value={inv}>
@@ -159,7 +159,7 @@ const EnhancedCatalogTable: React.FC = () => {
                 </option>
               ))}
             </select>
-            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] pointer-events-none" />
+            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] dark:text-[rgb(var(--c-text-tertiary))] pointer-events-none" />
           </div>
 
           {/* Visibility Filter */}
@@ -167,7 +167,7 @@ const EnhancedCatalogTable: React.FC = () => {
             <select
               value={selectedVisibility}
               onChange={(e) => setSelectedVisibility(e.target.value)}
-              className="appearance-none w-full lg:w-40 pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent bg-white"
+              className="appearance-none w-full lg:w-40 pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] bg-white dark:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent"
             >
               {visibilityOptions.map((vis) => (
                 <option key={vis} value={vis}>
@@ -175,13 +175,13 @@ const EnhancedCatalogTable: React.FC = () => {
                 </option>
               ))}
             </select>
-            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] pointer-events-none" />
+            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] dark:text-[rgb(var(--c-text-tertiary))] pointer-events-none" />
           </div>
         </div>
 
         {/* Bulk Actions & Results */}
         <div className="mt-4 flex items-center justify-between">
-          <div className="text-sm text-[rgb(var(--c-neutral-600))]">
+          <div className="text-sm text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]">
             Showing {filteredProducts.length} of {mockProducts.length} products
             {selectedProducts.size > 0 && (
               <span className="ml-2 text-[rgb(var(--c-primary-500))] font-medium">
@@ -193,7 +193,7 @@ const EnhancedCatalogTable: React.FC = () => {
           {selectedProducts.size > 0 && (
             <div className="relative">
               <select
-                className="appearance-none pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg text-sm bg-white hover:bg-gray-50 transition-colors"
+                className="appearance-none pl-4 pr-10 py-2 border border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] bg-white dark:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] rounded-lg text-sm hover:bg-gray-50 dark:hover:bg-[rgb(var(--c-bg-primary))] transition-colors"
                 onChange={(e) => {
                   if (e.target.value) {
                     console.log('Bulk action:', e.target.value, 'on', selectedProducts.size, 'products');
@@ -208,17 +208,17 @@ const EnhancedCatalogTable: React.FC = () => {
                 <option value="update-price">Update Price</option>
                 <option value="archive">Archive</option>
               </select>
-              <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] pointer-events-none" />
+              <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))] dark:text-[rgb(var(--c-text-tertiary))] pointer-events-none" />
             </div>
           )}
         </div>
       </div>
 
       {/* Table Container */}
-      <div className="bg-white rounded-lg border border-[rgb(var(--c-neutral-200))] overflow-hidden">
+      <div className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] rounded-lg border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-gray-50 border-b-2 border-[rgb(var(--c-neutral-300))] sticky top-0 z-10">
+            <thead className="bg-gray-50 dark:bg-[rgb(var(--c-bg-tertiary))] border-b-2 border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-primary))] sticky top-0 z-10">
               <tr>
                 <th className="px-4 py-2.5 text-left w-12">
                   <input
@@ -228,28 +228,28 @@ const EnhancedCatalogTable: React.FC = () => {
                     className="w-4 h-4 rounded border-gray-300 text-[rgb(var(--c-primary-500))] focus:ring-[rgb(var(--c-primary-500))]"
                   />
                 </th>
-                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Product
                 </th>
-                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Category
                 </th>
-                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Price
                 </th>
-                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Inventory
                 </th>
-                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Visibility
                 </th>
-                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Last Updated
                 </th>
-                <th className="px-4 py-2.5 text-right text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider">
+                <th className="px-4 py-2.5 text-right text-xs font-semibold text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
@@ -258,39 +258,39 @@ const EnhancedCatalogTable: React.FC = () => {
               {isLoading ? (
                 // Loading Skeleton
                 Array.from({ length: 5 }).map((_, idx) => (
-                  <tr key={idx} className="animate-pulse border-b border-[rgb(var(--c-neutral-200))]">
+                  <tr key={idx} className="animate-pulse border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))]">
                     <td className="px-4 py-2.5">
-                      <div className="w-4 h-4 bg-gray-200 rounded"></div>
+                      <div className="w-4 h-4 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded"></div>
                     </td>
                     <td className="px-4 py-2.5">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gray-200 rounded"></div>
+                        <div className="w-10 h-10 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded"></div>
                         <div className="flex-1">
-                          <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-                          <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                          <div className="h-4 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded w-3/4 mb-2"></div>
+                          <div className="h-3 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded w-1/2"></div>
                         </div>
                       </div>
                     </td>
                     <td className="px-4 py-2.5">
-                      <div className="h-4 bg-gray-200 rounded w-20"></div>
+                      <div className="h-4 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded w-20"></div>
                     </td>
                     <td className="px-4 py-2.5">
-                      <div className="h-4 bg-gray-200 rounded w-24"></div>
+                      <div className="h-4 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded w-24"></div>
                     </td>
                     <td className="px-4 py-2.5">
-                      <div className="h-4 bg-gray-200 rounded w-16"></div>
+                      <div className="h-4 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded w-16"></div>
                     </td>
                     <td className="px-4 py-2.5">
-                      <div className="h-6 bg-gray-200 rounded w-16"></div>
+                      <div className="h-6 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded w-16"></div>
                     </td>
                     <td className="px-4 py-2.5">
-                      <div className="h-6 bg-gray-200 rounded w-20"></div>
+                      <div className="h-6 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded w-20"></div>
                     </td>
                     <td className="px-4 py-2.5">
-                      <div className="h-4 bg-gray-200 rounded w-20"></div>
+                      <div className="h-4 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded w-20"></div>
                     </td>
                     <td className="px-4 py-2.5">
-                      <div className="h-4 bg-gray-200 rounded w-16"></div>
+                      <div className="h-4 bg-gray-200 dark:bg-[rgb(var(--c-bg-tertiary))] rounded w-16"></div>
                     </td>
                   </tr>
                 ))
@@ -299,13 +299,13 @@ const EnhancedCatalogTable: React.FC = () => {
                 <tr>
                   <td colSpan={9} className="px-4 py-12 text-center">
                     <div className="flex flex-col items-center justify-center">
-                      <div className="w-16 h-16 mb-4 rounded-full bg-gray-100 flex items-center justify-center">
-                        <Search className="w-8 h-8 text-gray-400" />
+                      <div className="w-16 h-16 mb-4 rounded-full bg-gray-100 dark:bg-[rgb(var(--c-bg-tertiary))] flex items-center justify-center">
+                        <Search className="w-8 h-8 text-gray-400 dark:text-[rgb(var(--c-text-tertiary))]" />
                       </div>
-                      <h3 className="text-lg font-medium text-[rgb(var(--c-neutral-900))] mb-1">
+                      <h3 className="text-lg font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] mb-1">
                         No products found
                       </h3>
-                      <p className="text-sm text-[rgb(var(--c-neutral-600))]">
+                      <p className="text-sm text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]">
                         Try adjusting your filters or search terms
                       </p>
                     </div>
@@ -317,7 +317,7 @@ const EnhancedCatalogTable: React.FC = () => {
                   <React.Fragment key={product.id}>
                     {/* Parent Product Row */}
                     <tr
-                      className="border-b border-[rgb(var(--c-neutral-200))] hover:bg-gray-50/50 transition-colors group"
+                      className="border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] hover:bg-gray-50/50 dark:hover:bg-[rgb(var(--c-bg-tertiary))]/50 transition-colors group"
                     >
                       <td className="px-4 py-2.5">
                         <input
@@ -332,12 +332,12 @@ const EnhancedCatalogTable: React.FC = () => {
                           {product.variants && product.variants.length > 0 && (
                             <button
                               onClick={() => toggleExpandProduct(product.id)}
-                              className="p-0.5 hover:bg-gray-200 rounded transition-colors"
+                              className="p-0.5 hover:bg-gray-200 dark:hover:bg-[rgb(var(--c-bg-tertiary))] rounded transition-colors"
                             >
                               {expandedProducts.has(product.id) ? (
-                                <ChevronDown className="w-4 h-4 text-[rgb(var(--c-neutral-600))]" />
+                                <ChevronDown className="w-4 h-4 text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]" />
                               ) : (
-                                <ChevronRight className="w-4 h-4 text-[rgb(var(--c-neutral-600))]" />
+                                <ChevronRight className="w-4 h-4 text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]" />
                               )}
                             </button>
                           )}
@@ -350,12 +350,12 @@ const EnhancedCatalogTable: React.FC = () => {
                         </div>
                       </td>
                       <td className="px-4 py-2.5 whitespace-nowrap">
-                        <span className="text-sm text-[rgb(var(--c-neutral-700))]">
+                        <span className="text-sm text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))]">
                           {product.category}
                         </span>
                       </td>
                       <td className="px-4 py-2.5 whitespace-nowrap">
-                        <span className="text-sm font-medium text-[rgb(var(--c-neutral-900))]">
+                        <span className="text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                           {formatPrice(product.priceMin, product.priceMax)}
                         </span>
                       </td>
@@ -365,12 +365,12 @@ const EnhancedCatalogTable: React.FC = () => {
                             {product.totalStock > 0 && product.totalStock <= 10 && (
                               <AlertTriangle className="w-3.5 h-3.5 text-orange-500" />
                             )}
-                            <span className={`text-sm font-medium ${getStockColor(product.totalStock)}`}>
+                            <span className={`text-sm font-medium ${getStockColor(product.totalStock)} dark:text-[rgb(var(--c-text-primary))]`}>
                               {product.totalStock} units
                             </span>
                           </div>
                           {product.reservedStock > 0 && (
-                            <span className="text-xs text-[rgb(var(--c-neutral-500))]">
+                            <span className="text-xs text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))]">
                               ({product.reservedStock} reserved)
                             </span>
                           )}
@@ -383,7 +383,7 @@ const EnhancedCatalogTable: React.FC = () => {
                         <VisibilityBadge visibility={product.visibility} />
                       </td>
                       <td className="px-4 py-2.5 whitespace-nowrap">
-                        <span className="text-sm text-[rgb(var(--c-neutral-600))]">
+                        <span className="text-sm text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]">
                           {formatDate(product.lastUpdated)}
                         </span>
                       </td>

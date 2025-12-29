@@ -155,7 +155,7 @@ const DashboardPage = () => {
           <div className="space-y-6">
             {/* Top Summary Section */}
             <div>
-              <h2 className="text-lg font-semibold text-[rgb(var(--c-neutral-900))] mb-4 pb-2 border-b border-[rgb(var(--c-neutral-200))]">
+              <h2 className="text-lg font-semibold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] mb-4 pb-2 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))]">
                 Performance Overview
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -165,7 +165,7 @@ const DashboardPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-5 hover:border-[rgb(var(--c-neutral-300))] transition-colors"
+                    className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] rounded-lg p-5 hover:border-[rgb(var(--c-neutral-300))] dark:hover:border-[rgb(var(--c-border-secondary))] transition-colors"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className={`p-2.5 rounded-lg ${stat.bgColor}`}>
@@ -181,10 +181,10 @@ const DashboardPage = () => {
                       </div>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-2xl font-bold text-[rgb(var(--c-neutral-900))]">
+                      <p className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                         {stat.value}
                       </p>
-                      <p className="text-sm text-[rgb(var(--c-neutral-600))]">
+                      <p className="text-sm text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]">
                         {stat.title}
                       </p>
                     </div>
@@ -195,7 +195,7 @@ const DashboardPage = () => {
 
             {/* Analytics Section */}
             <div>
-              <h2 className="text-lg font-semibold text-[rgb(var(--c-neutral-900))] mb-4 pb-2 border-b border-[rgb(var(--c-neutral-200))]">
+              <h2 className="text-lg font-semibold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] mb-4 pb-2 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))]">
                 Sales Analytics
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -204,13 +204,13 @@ const DashboardPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
-                  className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-5"
+                  className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] rounded-lg p-5"
                 >
                   <div className="mb-4">
-                    <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))]">
+                    <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                       Revenue Trend
                     </h3>
-                    <p className="text-xs text-[rgb(var(--c-neutral-600))] mt-1">
+                    <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-tertiary))] mt-1">
                       Last 7 months performance
                     </p>
                   </div>
@@ -250,13 +250,13 @@ const DashboardPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.25 }}
-                  className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-5"
+                  className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] rounded-lg p-5"
                 >
                   <div className="mb-4">
-                    <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))]">
+                    <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                       Orders Trend
                     </h3>
-                    <p className="text-xs text-[rgb(var(--c-neutral-600))] mt-1">
+                    <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-tertiary))] mt-1">
                       Last 7 months performance
                     </p>
                   </div>
@@ -292,7 +292,7 @@ const DashboardPage = () => {
 
             {/* Operational Widgets */}
             <div>
-              <h2 className="text-lg font-semibold text-[rgb(var(--c-neutral-900))] mb-4 pb-2 border-b border-[rgb(var(--c-neutral-200))]">
+              <h2 className="text-lg font-semibold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] mb-4 pb-2 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))]">
                 Operational Insights
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -301,41 +301,41 @@ const DashboardPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.3 }}
-                  className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg overflow-hidden"
+                  className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] rounded-lg overflow-hidden"
                 >
-                  <div className="p-5 border-b border-[rgb(var(--c-neutral-200))]">
-                    <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))]">
+                  <div className="p-5 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))]">
+                    <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                       Top Selling Products
                     </h3>
-                    <p className="text-xs text-[rgb(var(--c-neutral-600))] mt-1">
+                    <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-tertiary))] mt-1">
                       Best performers this month
                     </p>
                   </div>
                   <div className="overflow-x-auto">
                     <table className="w-full">
-                      <thead className="bg-[rgb(var(--c-neutral-50))]">
+                      <thead className="bg-[rgb(var(--c-neutral-50))] dark:bg-[rgb(var(--c-bg-tertiary))]">
                         <tr>
-                          <th className="px-5 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-600))] uppercase tracking-wider">
+                          <th className="px-5 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                             Product
                           </th>
-                          <th className="px-5 py-3 text-right text-xs font-medium text-[rgb(var(--c-neutral-600))] uppercase tracking-wider">
+                          <th className="px-5 py-3 text-right text-xs font-medium text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                             Units Sold
                           </th>
-                          <th className="px-5 py-3 text-right text-xs font-medium text-[rgb(var(--c-neutral-600))] uppercase tracking-wider">
+                          <th className="px-5 py-3 text-right text-xs font-medium text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))] uppercase tracking-wider">
                             Revenue
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-[rgb(var(--c-neutral-200))]">
+                      <tbody className="divide-y divide-[rgb(var(--c-neutral-200))] dark:divide-[rgb(var(--c-border-primary))]">
                         {topSellingProducts.map((product, index) => (
-                          <tr key={index} className="hover:bg-[rgb(var(--c-neutral-50))] transition-colors">
-                            <td className="px-5 py-3 text-sm text-[rgb(var(--c-neutral-900))]">
+                          <tr key={index} className="hover:bg-[rgb(var(--c-neutral-50))] dark:hover:bg-[rgb(var(--c-bg-tertiary))] transition-colors">
+                            <td className="px-5 py-3 text-sm text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                               {product.name}
                             </td>
-                            <td className="px-5 py-3 text-sm text-[rgb(var(--c-neutral-900))] text-right font-medium">
+                            <td className="px-5 py-3 text-sm text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] text-right font-medium">
                               {product.unitsSold}
                             </td>
-                            <td className="px-5 py-3 text-sm text-[rgb(var(--c-neutral-900))] text-right font-medium">
+                            <td className="px-5 py-3 text-sm text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] text-right font-medium">
                               {product.revenue}
                             </td>
                           </tr>
@@ -343,7 +343,7 @@ const DashboardPage = () => {
                       </tbody>
                     </table>
                     {topSellingProducts.length === 0 && (
-                      <div className="px-5 py-8 text-center text-sm text-[rgb(var(--c-neutral-500))]">
+                      <div className="px-5 py-8 text-center text-sm text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))]">
                         No sales data available
                       </div>
                     )}
@@ -355,28 +355,28 @@ const DashboardPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.35 }}
-                  className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg overflow-hidden"
+                  className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] rounded-lg overflow-hidden"
                 >
-                  <div className="p-5 border-b border-[rgb(var(--c-neutral-200))]">
-                    <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))]">
+                  <div className="p-5 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))]">
+                    <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                       Low Stock Alerts
                     </h3>
-                    <p className="text-xs text-[rgb(var(--c-neutral-600))] mt-1">
+                    <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-tertiary))] mt-1">
                       Products requiring attention
                     </p>
                   </div>
-                  <div className="divide-y divide-[rgb(var(--c-neutral-200))]">
+                  <div className="divide-y divide-[rgb(var(--c-neutral-200))] dark:divide-[rgb(var(--c-border-primary))]">
                     {lowStockAlerts.map((item, index) => (
                       <div 
                         key={index} 
-                        className="px-5 py-4 hover:bg-[rgb(var(--c-neutral-50))] transition-colors"
+                        className="px-5 py-4 hover:bg-[rgb(var(--c-neutral-50))] dark:hover:bg-[rgb(var(--c-bg-tertiary))] transition-colors"
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex-1">
-                            <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))]">
+                            <p className="text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                               {item.name}
                             </p>
-                            <p className="text-xs text-[rgb(var(--c-neutral-600))] mt-0.5">
+                            <p className="text-xs text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-tertiary))] mt-0.5">
                               Threshold: {item.threshold} units
                             </p>
                           </div>
@@ -390,7 +390,7 @@ const DashboardPage = () => {
                       </div>
                     ))}
                     {lowStockAlerts.length === 0 && (
-                      <div className="px-5 py-8 text-center text-sm text-[rgb(var(--c-neutral-500))]">
+                      <div className="px-5 py-8 text-center text-sm text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))]">
                         All products are well stocked
                       </div>
                     )}
@@ -401,7 +401,7 @@ const DashboardPage = () => {
 
             {/* Seller Action Panel */}
             <div>
-              <h2 className="text-lg font-semibold text-[rgb(var(--c-neutral-900))] mb-4 pb-2 border-b border-[rgb(var(--c-neutral-200))]">
+              <h2 className="text-lg font-semibold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] mb-4 pb-2 border-b border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))]">
                 Quick Actions
               </h2>
               <motion.div
@@ -412,21 +412,21 @@ const DashboardPage = () => {
               >
                 <button
                   onClick={() => setActiveTab('products')}
-                  className="bg-white border-2 border-[rgb(var(--c-primary-500))] hover:bg-[rgb(var(--c-primary-500))]/5 text-[rgb(var(--c-primary-500))] rounded-lg p-4 transition-all flex items-center justify-center space-x-3 font-medium"
+                  className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] border-2 border-[rgb(var(--c-primary-500))] hover:bg-[rgb(var(--c-primary-500))]/5 dark:hover:bg-[rgb(var(--c-primary-500))]/10 text-[rgb(var(--c-primary-500))] rounded-lg p-4 transition-all flex items-center justify-center space-x-3 font-medium"
                 >
                   <PackagePlus className="h-5 w-5" />
                   <span>Add Product</span>
                 </button>
                 <button
                   onClick={() => setActiveTab('orders')}
-                  className="bg-white border-2 border-[rgb(var(--c-neutral-300))] hover:border-[rgb(var(--c-neutral-400))] hover:bg-[rgb(var(--c-neutral-50))] text-[rgb(var(--c-neutral-700))] rounded-lg p-4 transition-all flex items-center justify-center space-x-3 font-medium"
+                  className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] border-2 border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] hover:border-[rgb(var(--c-neutral-400))] dark:hover:border-[rgb(var(--c-border-primary))] hover:bg-[rgb(var(--c-neutral-50))] dark:hover:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] rounded-lg p-4 transition-all flex items-center justify-center space-x-3 font-medium"
                 >
                   <FileText className="h-5 w-5" />
                   <span>View Orders</span>
                 </button>
                 <button
                   onClick={() => setActiveTab('products')}
-                  className="bg-white border-2 border-[rgb(var(--c-neutral-300))] hover:border-[rgb(var(--c-neutral-400))] hover:bg-[rgb(var(--c-neutral-50))] text-[rgb(var(--c-neutral-700))] rounded-lg p-4 transition-all flex items-center justify-center space-x-3 font-medium"
+                  className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] border-2 border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-secondary))] hover:border-[rgb(var(--c-neutral-400))] dark:hover:border-[rgb(var(--c-border-primary))] hover:bg-[rgb(var(--c-neutral-50))] dark:hover:bg-[rgb(var(--c-bg-tertiary))] text-[rgb(var(--c-neutral-700))] dark:text-[rgb(var(--c-text-secondary))] rounded-lg p-4 transition-all flex items-center justify-center space-x-3 font-medium"
                 >
                   <RefreshCw className="h-5 w-5" />
                   <span>Update Inventory</span>
@@ -440,7 +440,7 @@ const DashboardPage = () => {
         return (
           <div className="space-y-6">
             <div className="flex justify-between items-center">
-              <h3 className="text-xl font-bold text-[rgb(var(--c-neutral-900))]">
+              <h3 className="text-xl font-bold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                 Product Management
               </h3>
               <button onClick={() => setShowAddModal(true)} className="btn-primary flex items-center">
@@ -452,35 +452,35 @@ const DashboardPage = () => {
             <div className="card">
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-[rgb(var(--c-neutral-100))]">
+                  <thead className="bg-[rgb(var(--c-neutral-100))] dark:bg-[rgb(var(--c-bg-tertiary))]">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] uppercase tracking-wider">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))] uppercase tracking-wider">
                         Product Name
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] uppercase tracking-wider">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))] uppercase tracking-wider">
                         Price
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] uppercase tracking-wider">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))] uppercase tracking-wider">
                         Stock
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] uppercase tracking-wider">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))] uppercase tracking-wider">
                         Status
                       </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] uppercase tracking-wider">
+                      <th className="px-6 py-3 text-left text-xs font-medium text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))] uppercase tracking-wider">
                         Actions
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-[rgb(var(--c-neutral-200))]">
+                  <tbody className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] divide-y divide-[rgb(var(--c-neutral-200))] dark:divide-[rgb(var(--c-border-primary))]">
                     {products.map((product) => (
-                      <tr key={product.id} className="hover:bg-[rgb(var(--c-neutral-100))]">
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[rgb(var(--c-neutral-900))]">
+                      <tr key={product.id} className="hover:bg-[rgb(var(--c-neutral-100))] dark:hover:bg-[rgb(var(--c-bg-tertiary))]">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]">
                           {product.name}
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-[rgb(var(--c-neutral-600))]">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]">
                           {product.price}
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-[rgb(var(--c-neutral-600))]">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]">
                           {product.stock}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
@@ -491,7 +491,7 @@ const DashboardPage = () => {
                             {product.status}
                           </span>
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-[rgb(var(--c-neutral-500))]">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-[rgb(var(--c-neutral-500))] dark:text-[rgb(var(--c-text-tertiary))]">
                           <div className="flex space-x-2">
                             <button
                               onClick={() => setShowViewModal(product)}
@@ -537,10 +537,10 @@ const DashboardPage = () => {
       alt={showViewModal.name}
       className="w-full h-48 object-cover rounded"
     />
-    <p><strong>Name:</strong> {showViewModal.name}</p>
-    <p><strong>Price:</strong> {showViewModal.price}</p>
-    <p><strong>Stock:</strong> {showViewModal.stock}</p>
-    <p><strong>Status:</strong> {showViewModal.status}</p>
+    <p className="text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]"><strong>Name:</strong> {showViewModal.name}</p>
+    <p className="text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]"><strong>Price:</strong> {showViewModal.price}</p>
+    <p className="text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]"><strong>Stock:</strong> {showViewModal.stock}</p>
+    <p className="text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))]"><strong>Status:</strong> {showViewModal.status}</p>
   </ProductModal>
 )}
 
@@ -561,10 +561,10 @@ const DashboardPage = () => {
       default:
         return (
           <div className="text-center py-12">
-            <h3 className="text-xl font-bold text-[rgb(var(--c-neutral-900))] mb-4">
+            <h3 className="text-xl font-bold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] mb-4">
               Coming Soon
             </h3>
-            <p className="text-[rgb(var(--c-neutral-600))]">
+            <p className="text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]">
               This feature is currently under development.
             </p>
           </div>
@@ -580,10 +580,10 @@ const DashboardPage = () => {
         transition={{ duration: 0.5 }}
         className="mb-6"
       >
-        <h1 className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] mb-1">
+        <h1 className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] mb-1">
           Performance Overview
         </h1>
-        <p className="text-sm text-[rgb(var(--c-neutral-600))]">
+        <p className="text-sm text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]">
           Welcome back! Here's an overview of your store performance.
         </p>
       </motion.div>
@@ -602,7 +602,7 @@ const DashboardPage = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center px-4 py-3 rounded-lg transition-colors duration-200 ${activeTab === tab.id
                       ? 'bg-[rgb(var(--c-primary-500))]/10 text-[rgb(var(--c-primary-500))]'
-                      : 'text-[rgb(var(--c-neutral-600))] hover:bg-[rgb(var(--c-neutral-200))]/50'
+                      : 'text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))] hover:bg-[rgb(var(--c-neutral-200))]/50 dark:hover:bg-[rgb(var(--c-bg-tertiary))]'
                       }`}
                   >
                     <tab.icon className="h-5 w-5 mr-3" />

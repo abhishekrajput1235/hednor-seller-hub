@@ -12,8 +12,8 @@ const VisibilityBadge: React.FC<VisibilityBadgeProps> = ({ visibility }) => {
     <span
       className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium border ${
         isPublished
-          ? 'bg-blue-100 text-blue-800 border-blue-200'
-          : 'bg-gray-100 text-gray-600 border-gray-200'
+          ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 border-blue-200 dark:border-blue-800'
+          : 'bg-gray-100 dark:bg-gray-800/30 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700'
       }`}
     >
       {isPublished ? (

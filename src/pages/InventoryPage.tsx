@@ -5,10 +5,10 @@ const InventoryPage: React.FC = () => {
   return (
     <div>
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] mb-2">
+        <h2 className="text-2xl font-bold text-[rgb(var(--c-neutral-900))] dark:text-[rgb(var(--c-text-primary))] mb-2">
           Inventory Management
         </h2>
-        <p className="text-sm text-[rgb(var(--c-neutral-600))]">
+        <p className="text-sm text-[rgb(var(--c-neutral-600))] dark:text-[rgb(var(--c-text-secondary))]">
           Manage stock levels across all your products and variants. Click on stock values to edit them inline.
         </p>
       </div>
