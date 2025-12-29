@@ -252,7 +252,7 @@ const LandingPage = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Start Your Selling Journey?
           </h2>
-          <p className="text-lg text-[rgb(var(--c-neutral-300))] mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-black mb-8 max-w-2xl mx-auto">
             Join thousands of successful sellers and start earning today.
             It's free to get started and takes less than 10 minutes.
           </p>

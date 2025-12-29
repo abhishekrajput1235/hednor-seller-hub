@@ -103,7 +103,7 @@ const OrdersPage: React.FC = () => {
       </div>
 
       {/* Search and Filters */}
-      <div className="mb-4 flex flex-col sm:flex-row gap-3 dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))]">
+      <div className="mb-4 flex flex-col sm:flex-row gap-3 dark:border-[rgb(var(--c-neutral-600))]">
         <div className="flex-1 relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))]" />
           <input
@@ -111,10 +111,10 @@ const OrdersPage: React.FC = () => {
             placeholder="Search by order ID, customer name, or email..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent text-sm dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-white"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent text-sm dark:bg-black dark:border-[rgb(var(--c-neutral-600))] dark:text-white"
           />
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:bg-gray-700 transition-colors dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-white">
+        <button className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:bg-gray-700 transition-colors dark:bg-black dark:border-[rgb(var(--c-neutral-600))] dark:text-white">
           <Filter className="w-4 h-4" />
           Filters
         </button>
@@ -141,7 +141,7 @@ const OrdersPage: React.FC = () => {
       </div>
 
       {/* Pagination Placeholder */}
-      <div className="mt-4 flex items-center justify-between bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 px-4 py-3 dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))]" >
+      <div className="mt-4 flex items-center justify-between bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 px-4 py-3 dark:bg-black dark:border-[rgb(var(--c-neutral-600))]" >
         <p className="text-sm text-gray-600 dark:text-gray-400 dark:text-gray-400">
           Showing {filteredOrders.length} of {filteredOrders.length} orders
         </p>

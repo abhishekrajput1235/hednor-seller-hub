@@ -145,7 +145,7 @@ const InventoryTable: React.FC = () => {
   return (
     <div className="space-y-4">
       {/* Search Bar */}
-      <div className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] rounded-lg border border-[rgb(var(--c-neutral-200))] p-4">
+      <div className="bg-white dark:bg-black rounded-lg border border-[rgb(var(--c-neutral-200))] p-4">
         <div className="flex items-center gap-4">
           <div className="flex-1 relative dark:border-[rgb(var(--c-neutral-600))] dark:text-white">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[rgb(var(--c-neutral-400))]" />
@@ -154,7 +154,7 @@ const InventoryTable: React.FC = () => {
               placeholder="Search by SKU, product name, or variant..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent dark:border-[rgb(var(--c-neutral-600))] dark:text-white bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))]"
+              className="w-full pl-10 pr-4 py-2 border border-[rgb(var(--c-neutral-300))] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[rgb(var(--c-primary-500))] focus:border-transparent dark:border-[rgb(var(--c-neutral-600))] dark:text-white bg-black dark:bg-black"
             />
           </div>
         </div>
@@ -169,38 +169,38 @@ const InventoryTable: React.FC = () => {
       </div>
 
       {/* Desktop Table */}
-      <div className="hidden lg:block bg-white dark:bg-[rgb(var(--c-bg-secondary))] rounded-lg border border-[rgb(var(--c-neutral-200))] overflow-hidden">
-        <div className="overflow-x-auto dark:border-[rgb(var(--c-neutral-600))] dark:text-white">
+      <div className="hidden lg:block bg-white dark:bg-black rounded-lg border border-[rgb(var(--c-neutral-200))] overflow-hidden">
+        <div className="overflow-x-auto dark:border-[rgb(var(--c-neutral-600))] dark:bg-black dark:text-white">
           <table className="w-full dark:border-[rgb(var(--c-neutral-600))] dark:text-white">
-            <thead className="bg-gray-50 dark:bg-[rgb(var(--c-bg-secondary))] border-b border-[rgb(var(--c-neutral-200))] sticky top-0 z-10 dark:border-[rgb(var(--c-neutral-600))] dark:text-white">
+            <thead className="bg-gray-50 dark:bg-black border-b border-[rgb(var(--c-neutral-200))] sticky top-0 z-10 dark:border-[rgb(var(--c-neutral-600))] dark:text-white">
               <tr>
                 <th className="px-4 py-3 text-left w-12">
                   <input
                     type="checkbox"
                     checked={selectedRows.size === filteredData.length && filteredData.length > 0}
                     onChange={toggleSelectAll}
-                    className="w-4 h-4 rounded bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))] border-gray-300 text-[rgb(var(--c-primary-500))] focus:ring-[rgb(var(--c-primary-500))] dark:border-[rgb(var(--c-neutral-600))] dark:text-white"
+                    className="w-4 h-4 rounded bg-black dark:bg-black border-gray-300 text-[rgb(var(--c-primary-500))] focus:ring-[rgb(var(--c-primary-500))] dark:border-[rgb(var(--c-neutral-600))] dark:text-white"
                   />
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))]">
+                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-black dark:bg-black">
                   SKU
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))]">
+                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-black dark:bg-black">
                   Product Name
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))]">
+                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-black dark:bg-black">
                   Variant
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))]">
+                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-black dark:bg-black">
                   Available Stock
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))]">
+                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-black dark:bg-black">
                   Reserved Stock
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))]">
+                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-black dark:bg-black">
                   Status
                 </th>
-                <th className="px-4 py-3 text-right text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))]">
+                <th className="px-4 py-3 text-right text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white bg-black dark:bg-black">
                   Actions
                 </th>
               </tr>
@@ -226,7 +226,7 @@ const InventoryTable: React.FC = () => {
                 filteredData.map((item) => (
                   <tr
                     key={item.sku}
-                    className={`hover:bg-gray-50 dark:hover:bg-[rgb(var(--c-bg-secondary))] dark:bg-[rgb(var(--c-bg-secondary))] transition-colors group ${editedRows.has(item.sku) ? 'bg-yellow-50' : ''}`}
+                    className={`hover:bg-gray-50 dark:hover:bg-black dark:bg-black transition-colors group ${editedRows.has(item.sku) ? 'bg-yellow-50' : ''}`}
                   >
                     <td className="px-4 py-3">
                       <input

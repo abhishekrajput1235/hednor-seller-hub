@@ -25,7 +25,7 @@ const StatusTabs: React.FC<StatusTabsProps> = ({ activeStatus, onStatusChange, c
   ];
 
   return (
-    <div className="border-b border-[rgb(var(--c-neutral-200))] bg-white dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))]">
+    <div className="border-b border-[rgb(var(--c-neutral-200))] bg-white dark:bg-black dark:border-[rgb(var(--c-neutral-600))]">
       <div className="flex overflow-x-auto">
         {tabs.map((tab) => (
           <button

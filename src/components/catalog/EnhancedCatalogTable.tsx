@@ -100,7 +100,7 @@ const EnhancedCatalogTable: React.FC = () => {
   return (
     <div className="space-y-4">
       {/* Filter Bar */}
-      <div className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] rounded-lg border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] p-4">
+      <div className="bg-white dark:bg-black rounded-lg border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] p-4">
         <div className="flex flex-col lg:flex-row gap-4">
           {/* Search */}
           <div className="flex-1 relative">
@@ -215,7 +215,7 @@ const EnhancedCatalogTable: React.FC = () => {
       </div>
 
       {/* Table Container */}
-      <div className="bg-white dark:bg-[rgb(var(--c-bg-secondary))] rounded-lg border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] overflow-hidden">
+      <div className="bg-white dark:bg-black rounded-lg border border-[rgb(var(--c-neutral-200))] dark:border-[rgb(var(--c-border-primary))] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50 dark:bg-[rgb(var(--c-bg-tertiary))] border-b-2 border-[rgb(var(--c-neutral-300))] dark:border-[rgb(var(--c-border-primary))] sticky top-0 z-10">

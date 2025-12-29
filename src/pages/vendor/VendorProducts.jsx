@@ -171,14 +171,14 @@ const VendorProducts = () => {
                 <div className="flex items-center space-x-3">
                     <button
                         onClick={() => navigate('/seller/products/import')}
-                        className="flex items-center space-x-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                        className="flex items-center space-x-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 dark:text-white dark:hover:text-white dark:bg-black transition-colors"
                     >
                         <Upload className="w-5 h-5" />
                         <span>Import</span>
                     </button>
                     <button
                         onClick={() => navigate('/seller/products/new')}
-                        className="flex items-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+                        className="flex items-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-primary-700 dark:hover:bg-primary-800 dark:hover:text-white dark:hover:text-white dark:bg-black hover:dark:bg-transparent transition-colors"
                     >
                         <Plus className="w-5 h-5 dark:text-white text-black" />
                         <span className='dark:text-white text-black'>Add New Product</span>
@@ -221,7 +221,7 @@ const VendorProducts = () => {
             </div>
 
             {/* Filters & Search */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4">
+            <div className="bg-white dark:bg-black rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4">
                 <div className="flex flex-col lg:flex-row lg:items-center gap-4">
                     {/* Search */}
                     <div className="relative flex-1">
@@ -356,7 +356,7 @@ const VendorProducts = () => {
 
             {/* Products Display */}
             {filteredProducts.length === 0 ? (
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-12 text-center">
+                <div className="bg-white dark:bg-black rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-12 text-center">
                     <Package className="w-16 h-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
                     <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">No products found</h3>
                     <p className="text-gray-500 dark:text-gray-400 mb-6">

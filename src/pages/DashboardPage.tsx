@@ -139,7 +139,7 @@ const DashboardPage = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:border-gray-300 dark:border-gray-600 transition-colors"
+                  className="bg-white border border-gray-200 dark:border-gray-700 rounded-lg p-5 hover:border-gray-300 dark:border-gray-600 transition-colors dark:bg-black"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className={`p-2.5 rounded-lg ${stat.bgColor}`}>
@@ -167,7 +167,7 @@ const DashboardPage = () => {
           </div>
 
           {/* Analytics Section */}
-          <div>
+          <div className=''>
             <h2 className="text-lg font-semibold text-[rgb(var(--c-neutral-900))] mb-4 pb-2 border-b border-[rgb(var(--c-neutral-200))]">
               Sales Analytics
             </h2>
@@ -177,7 +177,7 @@ const DashboardPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
-                className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-5"
+                className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-5 dark:bg-black"
               >
                 <div className="mb-4">
                   <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))]">
@@ -223,7 +223,7 @@ const DashboardPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.25 }}
-                className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-5"
+                className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg p-5 dark:bg-black"
               >
                 <div className="mb-4">
                   <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))]">
@@ -274,7 +274,7 @@ const DashboardPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
-                className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg overflow-hidden"
+                className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg overflow-hidden dark:bg-black"
               >
                 <div className="p-5 border-b border-[rgb(var(--c-neutral-200))]">
                   <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))]">
@@ -328,7 +328,7 @@ const DashboardPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.35 }}
-                className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg overflow-hidden"
+                className="bg-white border border-[rgb(var(--c-neutral-200))] rounded-lg overflow-hidden dark:bg-black"
               >
                 <div className="p-5 border-b border-[rgb(var(--c-neutral-200))]">
                   <h3 className="text-base font-semibold text-[rgb(var(--c-neutral-900))]">

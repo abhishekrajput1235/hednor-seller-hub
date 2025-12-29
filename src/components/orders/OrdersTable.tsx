@@ -46,7 +46,7 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
 
   if (orders.length === 0) {
     return (
-      <div className="bg-white rounded-lg border border-[rgb(var(--c-neutral-200))] p-12 text-center dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))]">
+      <div className="bg-white rounded-lg border border-[rgb(var(--c-neutral-200))] p-12 text-center dark:bg-black dark:border-[rgb(var(--c-neutral-600))]">
         <Package className="w-12 h-12 mx-auto text-[rgb(var(--c-neutral-400))] mb-3" />
         <p className="text-[rgb(var(--c-neutral-600))] text-sm">No orders found</p>
       </div>
@@ -54,10 +54,10 @@ const OrdersTable: React.FC<OrdersTableProps> = ({
   }
 
   return (
-    <div className="bg-white rounded-lg border border-[rgb(var(--c-neutral-200))] overflow-hidden dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))] dark:text-white">
+    <div className="bg-white rounded-lg border border-[rgb(var(--c-neutral-200))] overflow-hidden dark:bg-black dark:border-[rgb(var(--c-neutral-600))] dark:text-white">
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-[rgb(var(--c-neutral-50))] sticky top-0 z-10 dark:bg-[rgb(var(--c-bg-secondary))] dark:border-[rgb(var(--c-neutral-600))]">
+          <thead className="bg-[rgb(var(--c-neutral-50))] sticky top-0 z-10 dark:bg-black dark:border-[rgb(var(--c-neutral-600))]">
             <tr className="border-b border-[rgb(var(--c-neutral-200))]">
               <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--c-neutral-700))] uppercase tracking-wider dark:text-white">
                 Order ID
