@@ -15,8 +15,42 @@
   --c-neutral-400: 156, 163, 175;
   --c-neutral-300: 209, 213, 219;
   --c-neutral-200: 229, 231, 235;
+  --c-neutral-50: 249, 250, 251;
   --c-warning-500: 245, 158, 11;
   --c-error-500: 239, 68, 68;
+  
+  /* Semantic colors for light mode */
+  --c-bg-primary: 255, 255, 255;
+  --c-bg-secondary: 249, 250, 251;
+  --c-bg-tertiary: 243, 244, 246;
+  --c-text-primary: 17, 24, 39;
+  --c-text-secondary: 75, 85, 99;
+  --c-text-tertiary: 107, 114, 128;
+  --c-border-primary: 229, 231, 235;
+  --c-border-secondary: 209, 213, 219;
+}
+
+.dark {
+  --c-neutral-100: 31, 41, 55; /* dark background */
+  --c-neutral-900: 243, 244, 246; /* light text for dark mode */
+  --c-neutral-800: 209, 213, 219;
+  --c-neutral-700: 156, 163, 175;
+  --c-neutral-600: 156, 163, 175;
+  --c-neutral-500: 107, 114, 128;
+  --c-neutral-400: 75, 85, 99;
+  --c-neutral-300: 55, 65, 81;
+  --c-neutral-200: 55, 65, 81;
+  --c-neutral-50: 31, 41, 55;
+  
+  /* Semantic colors for dark mode */
+  --c-bg-primary: 17, 24, 39;
+  --c-bg-secondary: 31, 41, 55;
+  --c-bg-tertiary: 55, 65, 81;
+  --c-text-primary: 243, 244, 246;
+  --c-text-secondary: 209, 213, 219;
+  --c-text-tertiary: 156, 163, 175;
+  --c-border-primary: 55, 65, 81;
+  --c-border-secondary: 75, 85, 99;
 }
 
 * {
