@@ -28,7 +28,7 @@ const PUBLIC_ROUTE_PATTERNS = [
 const isPublicRoute = (pathname: string): boolean => {
   return PUBLIC_ROUTE_PATTERNS.some(pattern => 
     pathname === pattern || (pattern !== '/' && pathname.startsWith(pattern + '/'))
-  ) || pathname === '/';
+  );
 };
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -66,7 +66,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
   }, []);
 
-  // Apply theme logic based on route
+  // Apply theme logic based on route - centralized DOM manipulation
   useEffect(() => {
     const root = document.documentElement;
     const isPublic = isPublicRoute(currentPath);
@@ -89,12 +89,19 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       }
       
       setThemeState(dashboardTheme);
+      localStorage.setItem('theme', dashboardTheme);
     }
   }, [currentPath]);
 
   // Save theme to localStorage when changed (only for dashboard routes)
   useEffect(() => {
     if (!isPublicRoute(currentPath)) {
+      const root = document.documentElement;
+      if (theme === 'dark') {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
       localStorage.setItem('theme', theme);
     }
   }, [theme, currentPath]);
@@ -116,16 +123,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     
     setThemeState(newTheme);
   };
-
-  // Apply theme to DOM
-  useEffect(() => {
-    const root = document.documentElement;
-    if (theme === 'dark' && !isPublicRoute(currentPath)) {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  }, [theme, currentPath]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme, isThemeToggleEnabled }}>
